@@ -1,0 +1,26 @@
+---
+const { nombre, departamento, ubicacion, aula, estado = "Información por actualizar" } = Astro.props;
+---
+
+<article class="tarjeta-laboratorio"> <!-- TARJETA DE LABORATORIO -->
+
+    <div class="encabezado-laboratorio"> <!-- FRANJA SUPERIOR DE LA TARJETA -->
+        <h3>{aula}</h3>
+        <p>{departamento}</p>
+    </div>
+
+    <div class="contenido-laboratorio"> <!-- INFORMACION DEL LABORATORIO -->
+        <h4>{nombre}</h4>
+
+        <p><strong>Departamento:</strong> {departamento}</p>
+        <p><strong>Ubicación:</strong> {ubicacion}</p>
+        <p><strong>Aula:</strong> {aula}</p>
+        <p><strong>Estado:</strong> {estado}</p>
+
+        <div class="acciones-laboratorio"> <!-- BOTONES DE LA TARJETA -->
+            <a href="#">Ver detalles</a>
+            <a href="/ubicacion" class="boton-ubicacion">Ver ubicación</a>
+        </div>
+    </div>
+
+</article>

@@ -1,15 +1,96 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TarjetaLaboratorio from '../components/TarjetaLaboratorio.astro';
+
+const laboratorios = [
+    {
+        nombre: "Laboratorio de Computación",
+        departamento: "Ingeniería Informática",
+        ubicacion: "Edificio de Laboratorios",
+        aula: "LAB 6",
+        estado: "Disponible"
+    },
+    {
+        nombre: "Laboratorio de Redes",
+        departamento: "Ingeniería Informática",
+        ubicacion: "Edificio de Laboratorios",
+        aula: "LAB 2",
+        estado: "Disponible"
+    },
+    {
+        nombre: "Laboratorio de Electrónica",
+        departamento: "Ingeniería Electrónica",
+        ubicacion: "Bloque Técnico",
+        aula: "AULA 12",
+        estado: "Por actualizar"
+    },
+    {
+        nombre: "Laboratorio de Física",
+        departamento: "Ciencias Básicas",
+        ubicacion: "Pabellón B",
+        aula: "LAB 4",
+        estado: "Disponible"
+    },
+    {
+        nombre: "Laboratorio de Procesos Industriales",
+        departamento: "Ingeniería Industrial",
+        ubicacion: "Edificio Industrial",
+        aula: "LAB 1",
+        estado: "Por actualizar"
+    },
+    {
+        nombre: "Laboratorio de Mecánica",
+        departamento: "Ingeniería Mecánica",
+        ubicacion: "Taller Central",
+        aula: "AULA 8",
+        estado: "Disponible"
+    }
+];
 ---
 
 <Layout title="Laboratorios | Coordinación de Laboratorios y Proyectos UNET">
+
     <div class="contenedor"> <!-- contenedor general de contenido del main -->
-        <section class="pagina-contenido">
-            <h2>Laboratorios</h2>
-            <p>
-                En esta sección se podrá consultar información sobre los laboratorios disponibles,
-                responsables, servicios principales y espacios de trabajo.
-            </p>
+
+        <section class="pagina-laboratorios"> <!-- PAGINA DE LABORATORIOS -->
+
+            <div class="encabezado-pagina"> <!-- ENCABEZADO DE LA PAGINA -->
+                <h2>Laboratorios</h2>
+                <p>
+                    En esta sección se presenta el listado de laboratorios registrados,
+                    indicando su ubicación, aula asignada y departamento correspondiente.
+                </p>
+            </div>
+
+            <div class="buscador-laboratorios"> <!-- BUSCADOR DE LABORATORIOS -->
+                <input type="text" placeholder="Buscar laboratorio, aula o departamento">
+            </div>
+
+            <div class="filtros-laboratorios"> <!-- FILTROS DE DEPARTAMENTOS -->
+                <button>Todos</button>
+                <button>Informática</button>
+                <button>Electrónica</button>
+                <button>Mecánica</button>
+                <button>Industrial</button>
+                <button>Ciencias Básicas</button>
+            </div>
+
+            <div class="grid-laboratorios"> <!-- CONTENEDOR DE TARJETAS -->
+                {
+                    laboratorios.map((laboratorio) => (
+                        <TarjetaLaboratorio
+                            nombre={laboratorio.nombre}
+                            departamento={laboratorio.departamento}
+                            ubicacion={laboratorio.ubicacion}
+                            aula={laboratorio.aula}
+                            estado={laboratorio.estado}
+                        />
+                    ))
+                }
+            </div>
+
         </section>
+
     </div>
+
 </Layout>
