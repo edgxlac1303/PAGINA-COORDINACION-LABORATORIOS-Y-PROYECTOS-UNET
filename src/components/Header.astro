@@ -1,37 +1,46 @@
+---
+const { 
+    mostrarTituloHeader = false,
+    mostrarBuscadorHeader = false,
+    mostrarNavegacion = true
+} = Astro.props;
+---
+
 <header>
 
-    <div class="barra-superior"> <!-- DIV PARA AGRUPAR ELEMENTOS -->
-        <img src="/assets/img/logo-unet-blanco.png" alt="Imagotipo UNET" class="logo-unet"> <!-- logo principal -->
-        <p> Universidad Nacional Experimental del Táchira</p>
+    <div class="barra-superior">
+        <img src="/assets/img/logo-unet-blanco.png" alt="Imagotipo UNET" class="logo-unet">
+        <p>Universidad Nacional Experimental del Táchira</p>
     </div>
 
-    <div class="titulo-header">
-
-        <div class="titulo-con-logo">
-
-        <div class="titulo-texto">
-            <h1>Coordinación de Laboratorios y Proyectos</h1> <!-- TITULO -->
-            <p>Portal informativo institucional</p>
-        </div>
-
-
-            <img src="/assets/img/logo_decanato.jpeg" alt="Imagotipo DECANATO" class="logo-decanato-header">
-        </div>
-
-            <div class="buscador-header">
-            <input type="text" placeholder="Buscar laboratorio o proyecto">
-            <button>Buscar</button>
-        </div>
-    </div>
-
-    <nav> <!-- BARRA DE NAVEGACIÓN -->
-        <ul> <!-- LISTA NO ORDENADA -->
+    <nav class={mostrarNavegacion ? "" : "oculto"}>
+        <ul>
             <li><a href="/">Inicio</a></li>
             <li><a href="/laboratorios">Laboratorios</a></li>
             <li><a href="/proyectos">Proyectos</a></li>
             <li><a href="/mantenimiento">Mantenimiento</a></li>
             <li><a href="/ubicacion">Ubicación</a></li>
-        </ul> <!-- "a" ENLACE CLICKEABLE-->
+        </ul>
     </nav>
+
+    <div class={mostrarTituloHeader ? "titulo-header" : "titulo-header oculto"}>
+
+        <div class="titulo-con-logo">
+
+            <div class="titulo-texto">
+                <h1>Coordinación de Laboratorios y Proyectos</h1>
+                <p>Portal informativo institucional</p>
+            </div>
+
+            <img src="/assets/img/logo_decanato.jpeg" alt="Imagotipo DECANATO" class="logo-decanato-header">
+
+        </div>
+
+        <div class={mostrarBuscadorHeader ? "buscador-header" : "buscador-header oculto"}>
+            <input type="text" placeholder="Buscar laboratorio o proyecto">
+            <button>Buscar</button>
+        </div>
+
+    </div>
 
 </header>

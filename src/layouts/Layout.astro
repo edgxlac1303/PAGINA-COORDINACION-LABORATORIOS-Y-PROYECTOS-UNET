@@ -3,7 +3,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
-const { title = 'Coordinación de Laboratorios y Proyectos UNET' } = Astro.props;
+const { 
+    title = "Coordinación de Laboratorios y Proyectos UNET",
+    mostrarTituloHeader = false,
+    mostrarBuscadorHeader = false,
+    mostrarNavegacion = true
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,7 +20,11 @@ const { title = 'Coordinación de Laboratorios y Proyectos UNET' } = Astro.props
 </head>
 <body>
 
-<Header />
+<Header 
+        mostrarTituloHeader={mostrarTituloHeader}
+        mostrarBuscadorHeader={mostrarBuscadorHeader}
+        mostrarNavegacion={mostrarNavegacion}
+    />
 
 <main>
     <slot />

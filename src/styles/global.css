@@ -23,6 +23,13 @@ body {
 
 header {
     background-color: #FEFEFE;
+    margin: 0;
+    padding: 0;
+}
+
+/*OCULTA ELEMENTOS CUANDO NO SE NECESITAN*/
+.oculto {
+    display: none !important;
 }
 
 .barra-superior {
@@ -49,6 +56,7 @@ header {
     background-color: #FEFEFE;
     padding: 25px 30px 20px 30px;
     text-align: center;
+    margin-top: 1px;
 }
 
 /* AGRUPA EL TITULO CON EL LOGO DEL DECANATO */
@@ -68,7 +76,7 @@ header {
 }
 
 .titulo-header .titulo-texto p {
-    margin-top: 8px;
+    margin-top: 10px;
     font-size: 25px;
     color: #222222;
 }
