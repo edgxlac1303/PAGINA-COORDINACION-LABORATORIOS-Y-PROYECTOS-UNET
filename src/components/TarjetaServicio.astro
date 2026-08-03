@@ -1,0 +1,9 @@
+---
+const { titulo, descripcion, enlace, textoEnlace } = Astro.props;
+---
+
+<article class="tarjeta">
+    <h3>{titulo}</h3>
+    <p>{descripcion}</p>
+    <a href={enlace}>{textoEnlace}</a>
+</article>

@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Mantenimiento | Coordinación de Laboratorios y Proyectos UNET">
+    <div class="contenedor"> <!-- contenedor general de contenido del main -->
+        <section class="pagina-contenido">
+            <h2>Solicitudes de mantenimiento</h2>
+            <p>
+                En esta sección se podrá registrar información relacionada con revisión,
+                reparación o mantenimiento de los espacios de laboratorio.
+            </p>
+
+            <form class="formulario-mantenimiento">
+                <label>Nombre del solicitante</label>
+                <input type="text" placeholder="Ingrese su nombre">
+
+                <label>Laboratorio</label>
+                <input type="text" placeholder="Ingrese el laboratorio">
+
+                <label>Descripción de la solicitud</label>
+                <textarea placeholder="Describa la situación presentada"></textarea>
+
+                <button type="button">Registrar solicitud</button>
+            </form>
+        </section>
+    </div>
+</Layout>

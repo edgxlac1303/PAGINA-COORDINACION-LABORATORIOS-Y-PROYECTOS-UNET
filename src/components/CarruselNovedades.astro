@@ -1,0 +1,90 @@
+<section class="novedades-carrusel"> <!-- CARRUSEL INFORMATIVO -->
+    <h2>Novedades de la coordinación</h2>
+
+    <div class="carrusel">
+
+        <button class="btn-carrusel btn-anterior">◀</button>
+
+        <article class="slide activo">
+            <img src="/assets/img/novedad1.png" alt="Novedad de la coordinación">
+            
+            <div class="contenido-slide">
+                <h3>Recorrido virtual en desarrollo</h3>
+                <p>
+                    Se está trabajando en la incorporación de recorridos 360° para
+                    facilitar la ubicación de los laboratorios dentro de la universidad.
+                </p>
+            </div>
+        </article>
+
+        <article class="slide">
+            <img src="/assets/img/novedad2.png" alt="Solicitud de mantenimiento">
+    
+            <div class="contenido-slide">
+                <h3>Solicitudes de mantenimiento</h3>
+                <p>
+                    El portal permitirá registrar solicitudes de revisión, reparación
+                    o mantenimiento de los espacios de laboratorio.
+                </p>
+            </div>
+        </article>
+
+        <article class="slide">
+            <img src="/assets/img/novedad3.png" alt="Información sobre laboratorios">
+
+            <div class="contenido-slide">
+                <h3>Actualización de laboratorios</h3>
+                <p>
+                    Próximamente se publicará información detallada sobre los laboratorios,
+                    sus responsables, servicios disponibles y áreas de trabajo.
+                </p>
+            </div>
+        </article>
+
+        <button class="btn-carrusel btn-siguiente">▶</button>
+
+    </div>
+</section>
+
+<script>
+    // LOGICA DEL CARRUSEL DE NOVEDADES
+
+    const carruseles = document.querySelectorAll(".novedades-carrusel");
+
+    carruseles.forEach(function (carrusel) {
+        const botonAnterior = carrusel.querySelector(".btn-anterior");
+        const botonSiguiente = carrusel.querySelector(".btn-siguiente");
+        const slides = carrusel.querySelectorAll(".slide");
+
+        let indiceActual = 0;
+
+        if (!botonAnterior || !botonSiguiente || slides.length === 0) {
+            return;
+        }
+
+        botonSiguiente.addEventListener("click", function () {
+            slides[indiceActual].classList.remove("activo");
+
+            indiceActual = indiceActual + 1;
+
+            if (indiceActual >= slides.length) {
+                indiceActual = 0;
+            }
+
+            slides[indiceActual].classList.add("activo");
+        });
+
+        botonAnterior.addEventListener("click", function () {
+            slides[indiceActual].classList.remove("activo");
+
+            indiceActual = indiceActual - 1;
+
+            if (indiceActual < 0) {
+                indiceActual = slides.length - 1;
+            }
+
+            slides[indiceActual].classList.add("activo");
+        });
+    });
+</script>
+
