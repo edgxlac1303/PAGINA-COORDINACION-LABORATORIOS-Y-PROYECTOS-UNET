@@ -33,7 +33,7 @@ header {
 }
 
 .barra-superior {
-    background-color: #0F62AC;
+    background-color:#0F62AC;
     color: #FEFEFE;
     padding: 10px 30px;
     font-size: 22px;
@@ -642,12 +642,13 @@ footer p{
 /*CONTENEDOR DE TARJETAS DE LABORATORIOS*/
 .grid-laboratorios {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
 }
 
 /*TARJETA DE LABORATORIO*/
 .tarjeta-laboratorio {
+    width: 100%;
     background-color: #FEFEFE;
     border: 1px solid #c8dce4;
     border-radius: 6px;
@@ -922,8 +923,6 @@ footer p{
     .footer-bloque a {
         font-size: 14px;
     }
-}
-
 .pagina-laboratorios {
         padding: 22px;
     }
@@ -937,9 +936,12 @@ footer p{
     }
 
     .grid-laboratorios {
-        grid-template-columns: 1fr;
+        grid-template-columns: 3fr;
     }
 
     .acciones-laboratorio {
         flex-direction: column;
     }
+
+}
+

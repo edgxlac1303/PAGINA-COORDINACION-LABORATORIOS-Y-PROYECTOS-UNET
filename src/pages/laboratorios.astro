@@ -4,46 +4,452 @@ import TarjetaLaboratorio from '../components/TarjetaLaboratorio.astro';
 
 const laboratorios = [
     {
-        nombre: "Laboratorio de Computación",
-        departamento: "Ingeniería Informática",
-        ubicacion: "Edificio de Laboratorios",
-        aula: "LAB 6",
-        estado: "Disponible"
+        item: 1,
+        nombre: "BIOQUIMICA",
+        departamento: "QUIMICA",
+        ubicacion: "3 ER NIVEL EDIFICIO 12",
+        aula: "12C13"
     },
     {
-        nombre: "Laboratorio de Redes",
-        departamento: "Ingeniería Informática",
-        ubicacion: "Edificio de Laboratorios",
-        aula: "LAB 2",
-        estado: "Disponible"
+        item: 2,
+        nombre: "QUIMICA ANALITICA",
+        departamento: "QUIMICA",
+        ubicacion: "EDIFICIO 12",
+        aula: "12C13"
     },
     {
-        nombre: "Laboratorio de Electrónica",
-        departamento: "Ingeniería Electrónica",
-        ubicacion: "Bloque Técnico",
-        aula: "AULA 12",
-        estado: "Por actualizar"
+        item: 3,
+        nombre: "QUIMICA GENERAL I (071)",
+        departamento: "QUIMICA",
+        ubicacion: "EDIFICIO 33",
+        aula: "NO POSEE"
     },
     {
-        nombre: "Laboratorio de Física",
-        departamento: "Ciencias Básicas",
-        ubicacion: "Pabellón B",
-        aula: "LAB 4",
-        estado: "Disponible"
+        item: 4,
+        nombre: "QUIMICA GENERAL I (072)",
+        departamento: "QUIMICA",
+        ubicacion: "EDIFICIO 33",
+        aula: "NO POSEE"
     },
     {
-        nombre: "Laboratorio de Procesos Industriales",
-        departamento: "Ingeniería Industrial",
-        ubicacion: "Edificio Industrial",
-        aula: "LAB 1",
-        estado: "Por actualizar"
+        item: 5,
+        nombre: "QUIMICA ORGANICA",
+        departamento: "QUIMICA",
+        ubicacion: "EDIFICIO 33",
+        aula: "NO POSEE"
     },
     {
-        nombre: "Laboratorio de Mecánica",
-        departamento: "Ingeniería Mecánica",
-        ubicacion: "Taller Central",
-        aula: "AULA 8",
-        estado: "Disponible"
+        item: 6,
+        nombre: "QUIMICA II",
+        departamento: "QUIMICA",
+        ubicacion: "EDIFICIO 33",
+        aula: "NO POSEE"
+    },
+    {
+        item: 7,
+        nombre: "SISTEMA DE COMUNICACIONES E INGENIERIA DE REDES",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "2 DO NIVEL EDIFICIO 11",
+        aula: "11C9"
+    },
+    {
+        item: 8,
+        nombre: "INSTRUMENTACION Y CONTROL",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "1ER NIVEL EDIFICIO 11",
+        aula: "11B11"
+    },
+    {
+        item: 9,
+        nombre: "PROYECTO DE SISTEMAS CONTROL E INSTRUMENTACION INDUSTRIAL",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "1ER NIVEL EDIFICIO 11",
+        aula: "11B12"
+    },
+    {
+        item: 10,
+        nombre: "PROYECTO DE INSTRUMENTACION ELECTRONICA",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "1ER NIVEL EDIFICIO 11",
+        aula: "11B11"
+    },
+    {
+        item: 11,
+        nombre: "ELECTRONICA ANALOGICA",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "2 DO NIVEL EDIFICIO 11",
+        aula: "11C10"
+    },
+    {
+        item: 12,
+        nombre: "CIRCUITOS Y MEDICIONES",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "2 DO NIVEL EDIFICIO 11",
+        aula: "11C12"
+    },
+    {
+        item: 13,
+        nombre: "SISTEMAS DIGITALES",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "2 DO NIVEL EDIFICIO 11",
+        aula: "11C16"
+    },
+    {
+        item: 14,
+        nombre: "MICROPROCESADORES",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "Por definir",
+        aula: "Por definir"
+    },
+    {
+        item: 15,
+        nombre: "INGENIERIA ELECTRICA Y ELECTROTECNIA",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "2 DO NIVEL EDIFICIO 11",
+        aula: "11B06"
+    },
+    {
+        item: 16,
+        nombre: "TECNOLOGIA ELECTRICA",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "1ER NIVEL EDIFICIO 11",
+        aula: "11B08"
+    },
+    {
+        item: 17,
+        nombre: "TECNOLOGIA ELECTRONICA",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "1ER PNIVEL EDIFICIO 11",
+        aula: "11B16"
+    },
+    {
+        item: 18,
+        nombre: "ELECTRONICA INDUSTRIAL (PROFEI)",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "1ER NIVEL EDIFICIO 11",
+        aula: "11B17"
+    },
+    {
+        item: 19,
+        nombre: "RF Y MICROONDAS",
+        departamento: "INGENIERIA ELECTRONICA",
+        ubicacion: "2 DO NIVEL EDIFICIO 11",
+        aula: "11C167"
+    },
+    {
+        item: 20,
+        nombre: "COMPUTACION VALERIO WONG",
+        departamento: "INGENIERIA INFORMATICA",
+        ubicacion: "PLANTA BAJA EDIFICIO 12",
+        aula: "12B4"
+    },
+    {
+        item: 21,
+        nombre: "SALA DE ARQUITECTURA",
+        departamento: "INGENIERIA INFORMATICA",
+        ubicacion: "2 NIVEL EDIFICIO 12",
+        aula: "Por definir"
+    },
+    {
+        item: 22,
+        nombre: "COMPONENTES CONSTRUCTIVOS",
+        departamento: "ARQUITECTURA",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 23,
+        nombre: "FISICA I",
+        departamento: "MATEMATICA Y FISICA",
+        ubicacion: "EDIFICIO 33",
+        aula: "NO POSEE"
+    },
+    {
+        item: 24,
+        nombre: "FISICA II",
+        departamento: "MATEMATICA Y FISICA",
+        ubicacion: "EDIFICIO 33",
+        aula: "NO POSEE"
+    },
+    {
+        item: 25,
+        nombre: "RESISTENCIA DE MATERIALES",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "EDIFICIO 34",
+        aula: "NO POSEE"
+    },
+    {
+        item: 26,
+        nombre: "MATERIALES",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "SOTANO EDIFICIO 11",
+        aula: "11A8"
+    },
+    {
+        item: 27,
+        nombre: "MAQUINAS Y HERRAMIENTAS",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 28,
+        nombre: "TERMODINAMICA  II",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 29,
+        nombre: "PLANTA DE POTENCIA Y TURBOMAQUINAS",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 30,
+        nombre: "CONFORMADO DE MATERIALES \"TEC.CESAR GONZALEZ\"",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 31,
+        nombre: "TRANSFERENCIA DE CALOR",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "EDIFICIO 11",
+        aula: "11A14"
+    },
+    {
+        item: 32,
+        nombre: "ENERGIAS ALTERNATIVAS",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 33,
+        nombre: "DISEÑO MECANICO",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "2 DO NIVEL EDIFICIO 12",
+        aula: "12B9"
+    },
+    {
+        item: 34,
+        nombre: "MECANICA DE FLUIDOS",
+        departamento: "INGENIERIA MECANICA",
+        ubicacion: "SOTANO EDIFICIO 11",
+        aula: "11A7"
+    },
+    {
+        item: 35,
+        nombre: "INGENIERIA DE METODOS \"HERNANDO CACERES\"",
+        departamento: "INGENIERIA INDUSTRIAL",
+        ubicacion: "3ER NIVEL   EDIFICO 12",
+        aula: "12C19"
+    },
+    {
+        item: null,
+        nombre: "SIMULACION",
+        departamento: "INGENIERIA INDUSTRIAL",
+        ubicacion: "EDIFICIO B",
+        aula: "9 B"
+    },
+    {
+        item: 36,
+        nombre: "PAVIMENTOS",
+        departamento: "INGENIERIA CIVIL",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 37,
+        nombre: "MATERIALES, SUELOS Y CONCRETOS",
+        departamento: "INGENIERIA CIVIL",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 38,
+        nombre: "APICULTURA",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "TUQUERENA /RUBIO",
+        aula: "NO POSEE"
+    },
+    {
+        item: 39,
+        nombre: "ANATOMIA ANIMAL",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 40,
+        nombre: "MICROBIOLOGIA GENERAL, APLICADA Y AMBIENTAL",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "4TO NIVEL EDIFICIO 12",
+        aula: "12 D 11"
+    },
+    {
+        item: 41,
+        nombre: "FISIOLOGIA ANIMAL",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 42,
+        nombre: "SANIDAD ANIMAL",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 43,
+        nombre: "PARASITOLOGIA",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 44,
+        nombre: "GENETICA",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "3ER NIVEL   EDIFICIO 12",
+        aula: "12C08"
+    },
+    {
+        item: 45,
+        nombre: "INDUSTRIAS DE LA CARNE",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "3ER NIVEL   EDIFICO 12",
+        aula: "12C03"
+    },
+    {
+        item: 46,
+        nombre: "INDUSTRIAS DE LA LECHE",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "3ER NIVEL   EDIFICIO 12",
+        aula: "12C03"
+    },
+    {
+        item: 47,
+        nombre: "NUTRICION ANIMAL",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "3ER NIVEL   EDIFICIO 12",
+        aula: "12C09"
+    },
+    {
+        item: 48,
+        nombre: "ZOOLOGIA AGRICOLA",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "4TO NIVEL EDIFICIO 12",
+        aula: "12 D 26"
+    },
+    {
+        item: 50,
+        nombre: "BIOLOGIA",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "4TO NIVEL EDIFICIO 12",
+        aula: "12 D 26"
+    },
+    {
+        item: 51,
+        nombre: "AREA DE APOYO MICROBIOLOGICO Y ESTERTILIZACION \"AUTOCLAVE\"",
+        departamento: "INGENIERIA DE PRODUCCION ANIMAL",
+        ubicacion: "4TO NIVEL EDIFICIO 12",
+        aula: "12 D 16"
+    },
+    {
+        item: 53,
+        nombre: "INGENIERIA AMBIENTAL",
+        departamento: "INGENIERIA AMBIENTAL",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 54,
+        nombre: "PLANTA DE FRUTAS Y VEGETALES",
+        departamento: "INGENIERIA AGROINDUSTRIAL",
+        ubicacion: "TUQUERENA /RUBIO",
+        aula: "NO POSEE"
+    },
+    {
+        item: 55,
+        nombre: "SUELOS",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "EDIFICIO 31",
+        aula: "NO POSEE"
+    },
+    {
+        item: 56,
+        nombre: "BOTANICA AGRICOLA",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "4TO NIVEL EDIFICIO 12",
+        aula: "12D23"
+    },
+    {
+        item: 58,
+        nombre: "CULTIVO DE TEJIDOS",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "4TO NIVEL EDIFICIO 12",
+        aula: "12D05"
+    },
+    {
+        item: 59,
+        nombre: "FISIOLOGIA VEGETAL",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "4TO NIVEL EDIFICIO 12",
+        aula: "12D04"
+    },
+    {
+        item: 60,
+        nombre: "ENTOMOLOGIA",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "3ER NIVEL EDIFICIO 12",
+        aula: "12C04"
+    },
+    {
+        item: 61,
+        nombre: "FITOPATOLOGIA",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "4TO NIVEL EDIFICIO 12",
+        aula: "12D14"
+    },
+    {
+        item: 62,
+        nombre: "AGROECOLOGIA",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "EDIFICIO B DIAGONAL CAPILLA",
+        aula: "NO POSEE"
+    },
+    {
+        item: 63,
+        nombre: "FUNDAMENTOS DE HIDRAULICA",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "Por definir",
+        aula: "Por definir"
+    },
+    {
+        item: 65,
+        nombre: "PROTECCION VEGETAL",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "Por definir",
+        aula: "Por definir"
+    },
+    {
+        item: 66,
+        nombre: "MANEJO DE FERTILIDAD Y SUELOS",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "Por definir",
+        aula: "Por definir"
+    },
+    {
+        item: 67,
+        nombre: "FORRAJICULTURA",
+        departamento: "INGENIERIA AGRONOMICA",
+        ubicacion: "4TO NIVEL EDIFICIO 12",
+        aula: "12D24"
     }
 ];
 ---
@@ -73,8 +479,12 @@ const laboratorios = [
                 <button>Informática</button>
                 <button>Electrónica</button>
                 <button>Mecánica</button>
-                <button>Industrial</button>
-                <button>Ciencias Básicas</button>
+                <button>Arquitectura</button>
+                <button> Química</button>
+                <button> Matemática y física</button>
+                <button> Civil</button>
+                <button> Producción animal</button>
+                <button> Agronómica</button>
             </div>
 
             <div class="grid-laboratorios"> <!-- CONTENEDOR DE TARJETAS -->
@@ -85,7 +495,6 @@ const laboratorios = [
                             departamento={laboratorio.departamento}
                             ubicacion={laboratorio.ubicacion}
                             aula={laboratorio.aula}
-                            estado={laboratorio.estado}
                         />
                     ))
                 }

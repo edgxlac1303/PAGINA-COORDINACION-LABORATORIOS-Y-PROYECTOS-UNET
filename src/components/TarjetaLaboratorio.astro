@@ -1,5 +1,5 @@
 ---
-const { nombre, departamento, ubicacion, aula, estado = "Información por actualizar" } = Astro.props;
+const { nombre, departamento, ubicacion, aula} = Astro.props;
 ---
 
 <article class="tarjeta-laboratorio"> <!-- TARJETA DE LABORATORIO -->
@@ -15,7 +15,6 @@ const { nombre, departamento, ubicacion, aula, estado = "Información por actual
         <p><strong>Departamento:</strong> {departamento}</p>
         <p><strong>Ubicación:</strong> {ubicacion}</p>
         <p><strong>Aula:</strong> {aula}</p>
-        <p><strong>Estado:</strong> {estado}</p>
 
         <div class="acciones-laboratorio"> <!-- BOTONES DE LA TARJETA -->
             <a href="#">Ver detalles</a>
