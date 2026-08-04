@@ -2,16 +2,56 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Ubicación | Coordinación de Laboratorios y Proyectos UNET">
-    <div class="contenedor"> <!-- contenedor general de contenido del main -->
+<Layout title="Recorrido 360 | Coordinación de Laboratorios y Proyectos UNET">
+
+    <div class="contenedor">
+
         <section class="pagina-contenido">
-            <h2>Ubicación de laboratorios</h2>
+
+            <h2>Recorrido virtual 360°</h2>
+
             <p>
-                Esta sección permitirá consultar la ubicación de laboratorios y acceder
-                al recorrido virtual 360° de los espacios seleccionados.
+                En esta sección se muestra una prueba del recorrido virtual de los espacios
+                de laboratorios utilizando una imagen panorámica 360°.
             </p>
 
-            <a class="boton-pagina" href="/recorrido">Abrir recorrido 360°</a>
+            <div id="visor360"></div>
+
         </section>
+
     </div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.css">
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
+
+    <script is:inline>
+        pannellum.viewer('visor360', {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/prueba-lab.jpeg',
+            autoLoad: true,
+            title: 'Prueba de recorrido 360°',
+            author: 'Coordinación de Laboratorios y Proyectos UNET',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+            hotSpotDebug: true,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 20,
+                    type: 'info',
+                    text: 'Aula 12C13 - Laboratorio de Bioquímica'
+                },
+                {
+                    pitch: 12.91,
+                    yaw: 120,
+                    type: 'info',
+                    text: 'Entrada al laboratorio'
+                }
+            ]
+        });
+    </script>
+
 </Layout>
