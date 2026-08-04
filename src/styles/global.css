@@ -656,6 +656,25 @@ footer p{
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.08);
 }
 
+/* EVITA QUE LOS TEXTOS SE SALGAN DE LAS TARJETAS */
+.tarjeta-laboratorio,
+.encabezado-laboratorio,
+.contenido-laboratorio {
+    min-width: 0;
+}
+
+.encabezado-laboratorio h3,
+.encabezado-laboratorio p,
+.contenido-laboratorio h4,
+.contenido-laboratorio p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+
+
 /*FRANJA SUPERIOR DE LA TARJETA*/
 .encabezado-laboratorio {
     background-color: #c8dce4;
@@ -935,10 +954,42 @@ footer p{
         width: 100%;
     }
 
-    .grid-laboratorios {
-        grid-template-columns: repeat(2, 1fr); 
-/*Repite 2 veces una columna de tamaño 1fr.*/
-gap: 16px;
+    .encabezado-laboratorio {
+        padding: 12px;
+    }
+
+    .encabezado-laboratorio h3 {
+        font-size: 28px;
+        line-height: 1.1;
+    }
+
+    .encabezado-laboratorio p {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+
+    .contenido-laboratorio {
+        padding: 14px;
+    }
+
+    .contenido-laboratorio h4 {
+        font-size: 17px;
+        line-height: 1.25;
+    }
+
+    .contenido-laboratorio p {
+        font-size: 14px;
+        line-height: 1.35;
+    }
+
+    .acciones-laboratorio {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .acciones-laboratorio a {
+        font-size: 14px;
+        padding: 8px;
     }
 
     .acciones-laboratorio {
@@ -953,3 +1004,9 @@ gap: 16px;
 
 }
 
+@media (max-width: 480px) {
+
+    .grid-laboratorios {
+        grid-template-columns: 1fr;
+    }
+}
