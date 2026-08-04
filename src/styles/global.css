@@ -945,5 +945,11 @@ gap: 16px;
         flex-direction: column;
     }
 
+.contenido-laboratorio h4 {
+    color: #222222;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
 }
 
