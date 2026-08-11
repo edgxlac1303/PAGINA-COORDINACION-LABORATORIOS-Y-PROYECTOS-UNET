@@ -1,0 +1,74 @@
+/*FOOTER*/
+footer p {
+    color: #FEFEFE;
+    font-size: 18px;
+    margin: 10px;
+    text-align: right;
+}
+
+/*INFORMACIÓN DEL FOOTER*/
+.barra-inferior { 
+    background-color: #0F62AC;
+    color: #FEFEFE;
+    padding: 28px 45px;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 1.5fr 1.4fr 1.2fr 1fr 1.1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* BLOQUES DEL FOOTER */
+.footer-bloque {
+    border-left: 1px solid rgba(254, 254, 254, 0.45);
+    padding-left: 22px;
+}
+
+/* PRIMER BLOQUE DEL FOOTER */
+.footer-coordinacion {
+    border-left: none;
+    padding-left: 0px;
+}
+
+/* TITULOS DEL FOOTER */
+.footer-bloque h3 {
+    color: #FEFEFE;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.footer-bloque h4 {
+    color: #FEFEFE;
+    font-size: 20px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* TEXTOS DEL FOOTER */
+.footer-bloque p {
+    color: #FEFEFE;
+    font-size: 17px;
+    line-height: 1.4;
+    margin: 4px 0px;
+    text-align: left;
+}
+
+/* ENLACES DEL FOOTER */
+.footer-bloque a {
+    display: block;
+    color: #FEFEFE;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 5px 0px;
+}
+
+/* EFECTO DE LOS ENLACES DEL FOOTER */
+.footer-bloque a:hover {
+    color: #91D8F7;
+    text-decoration: underline;
+}
+
+/* BLOQUE FINAL DE DERECHOS */
+.footer-derechos p {
+    font-size: 17px;
+}

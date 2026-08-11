@@ -1,0 +1,78 @@
+/*PRESENTACION GENERAL*/
+.presentacion {
+    background-color: #FEFEFE;
+    padding: 25px;
+    border-radius: 0px;
+    border-left: 5px solid #0F62AC;
+}
+
+.contenido-principal {
+    background-color: #FEFEFE;
+    padding: 25px;
+    border-radius: 0px;
+    border-left: 5px solid #91D8F7;
+}
+
+/*PAGINAS INTERNAS*/
+.pagina-contenido {
+    background-color: #FEFEFE;
+    padding: 30px;
+    border-left: 5px solid #0F62AC;
+    border-radius: 6px;
+}
+
+.boton-pagina {
+    display: inline-block;
+    background-color: #0F62AC;
+    color: #FEFEFE;
+    padding: 10px 16px;
+    margin-top: 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*FORMULARIO DE MANTENIMIENTO*/
+.formulario-mantenimiento {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+}
+
+.formulario-mantenimiento input,
+.formulario-mantenimiento textarea {
+    padding: 10px;
+    border: 1px solid #0F62AC;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+.formulario-mantenimiento textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.formulario-mantenimiento button {
+    background-color: #0F62AC;
+    color: #FEFEFE;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*VISOR DEMO*/
+.visor360-demo {
+    height: 360px;
+    margin-top: 20px;
+    background-color: #c8dce4;
+    border: 2px dashed #0F62AC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0F62AC;
+    font-weight: bold;
+}

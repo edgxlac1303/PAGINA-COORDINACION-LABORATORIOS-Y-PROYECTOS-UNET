@@ -1,0 +1,59 @@
+/* 
+Colores institucionales UNET:
+Azul principal: #0F62AC
+Azul claro: #91D8F7
+Blanco: #FEFEFE
+*/
+
+/*ESTILOS GENERALES*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* coontrola tamaño total de los elementos */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222222;
+    height: 100%;
+    min-height: 100vh; /* footer al final */
+}
+
+/*OCULTA ELEMENTOS CUANDO NO SE NECESITAN*/
+.oculto {
+    display: none !important;
+}
+
+main {
+    flex: 1;
+    padding: 30px 30px 0px 30px; 
+    background-color: #f4f6f8;
+    margin-bottom: 0; 
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #0F62AC;
+    font-size: 34px;
+}
+
+main h2 {
+    color: #0F62AC;
+    margin-bottom: 10px;
+}
+
+main p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.contenedor {
+    max-width: 1600px; /* contenedor general de contenido del main */
+    margin: auto;
+}

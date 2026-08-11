@@ -1,0 +1,96 @@
+/*NOVEDADES*/
+.novedades {
+    background-color: #FEFEFE;
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.aviso {
+    border-left: 4px solid #0F62AC;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #f4f6f8;
+}
+
+.aviso h3 {
+    color: #0F62AC;
+    margin-bottom: 8px;
+}
+
+/*CARRUSEL DE NOVEDADES*/
+.novedades-carrusel {
+    background-color: #FEFEFE;
+    padding: 25px;
+    margin-top: 25px;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.novedades-carrusel h2 {
+    color: #0F62AC;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.carrusel {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-carrusel {
+    background-color: #0F62AC;
+    color: #FEFEFE;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.btn-carrusel:hover {
+    background-color: #094a82;
+}
+
+.slide {
+    display: none;
+    background-color: #f4f6f8;
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+}
+
+.slide.activo {
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.contenido-slide {
+    padding: 55px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 0;
+}
+
+.contenido-slide h3 {
+    color: #0F62AC;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contenido-slide p {
+    font-size: 16px;
+    line-height: 1.6;
+}
