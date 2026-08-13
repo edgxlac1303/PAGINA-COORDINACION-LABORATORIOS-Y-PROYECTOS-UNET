@@ -2,20 +2,54 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Recorrido 360 | Coordinación de Laboratorios y Proyectos UNET">
+<Layout title="Ubicación 360 | Coordinación de Laboratorios y Proyectos UNET">
 
     <div class="contenedor">
 
         <section class="pagina-contenido">
 
-            <h2>Recorrido virtual 360°</h2>
+            <h2>Recorrido virtual 360° - Edificio 11</h2>
 
             <p>
-                En esta sección se muestra una prueba del recorrido virtual de los espacios
-                de laboratorios utilizando una imagen panorámica 360°.
+                En esta sección se muestra el recorrido virtual correspondiente al Edificio 11,
+                permitiendo visualizar espacios académicos y laboratorios de la universidad.
             </p>
 
-            <div id="visor360"></div>
+            <div id="visorEdificio11"></div>
+
+        </section>
+
+    </div>
+
+    <div class="contenedor">
+
+        <section class="pagina-contenido">
+
+            <h2>Recorrido virtual 360° - Edificio 12</h2>
+
+            <p>
+                En esta sección se muestra el recorrido virtual correspondiente al Edificio 12,
+                donde se encuentran distintos espacios académicos y laboratorios de la institución.
+            </p>
+
+            <div id="visorEdificio12"></div>
+
+        </section>
+
+    </div>
+
+    <div class="contenedor">
+
+        <section class="pagina-contenido">
+
+            <h2>Recorrido virtual 360° - Edificio 31</h2>
+
+            <p>
+                En esta sección se muestra el recorrido virtual correspondiente al Edificio 31,
+                permitiendo visualizar otros espacios de laboratorios de la Universidad Nacional Experimental del Táchira.
+            </p>
+
+            <div id="visorEdificio31"></div>
 
         </section>
 
@@ -26,11 +60,12 @@ import Layout from '../layouts/Layout.astro';
     <script is:inline src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
 
     <script is:inline>
-        pannellum.viewer('visor360', {
+        // RECORRIDO EDIFICIO 11
+        pannellum.viewer('visorEdificio11', {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/prueba1.jpeg',
             autoLoad: true,
-            title: 'Prueba de recorrido 360°',
+            title: 'Recorrido virtual - Edificio 11',
             author: 'Coordinación de Laboratorios y Proyectos UNET',
             pitch: 0,
             yaw: 0,
@@ -49,6 +84,64 @@ import Layout from '../layouts/Layout.astro';
                     yaw: 120,
                     type: 'info',
                     text: 'Entrada al laboratorio'
+                }
+            ]
+        });
+
+
+        // RECORRIDO EDIFICIO 12
+        pannellum.viewer('visorEdificio12', {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/prueba1.jpeg',
+            autoLoad: true,
+            title: 'Recorrido virtual - Edificio 12',
+            author: 'Coordinación de Laboratorios y Proyectos UNET',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+            hotSpotDebug: true,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 20,
+                    type: 'info',
+                    text: 'Laboratorios del Edificio 12'
+                },
+                {
+                    pitch: 5,
+                    yaw: 90,
+                    type: 'info',
+                    text: 'Pasillo principal'
+                }
+            ]
+        });
+
+
+        // RECORRIDO EDIFICIO 31
+        pannellum.viewer('visorEdificio31', {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/prueba1.jpeg',
+            autoLoad: true,
+            title: 'Recorrido virtual - Edificio 31',
+            author: 'Coordinación de Laboratorios y Proyectos UNET',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+            hotSpotDebug: true,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 20,
+                    type: 'info',
+                    text: 'Laboratorios del Edificio 31'
+                },
+                {
+                    pitch: -4,
+                    yaw: 110,
+                    type: 'info',
+                    text: 'Área de acceso'
                 }
             ]
         });

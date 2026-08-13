@@ -57,3 +57,7 @@ main p {
     max-width: 1600px; /* contenedor general de contenido del main */
     margin: auto;
 }
+.contenedor2 {
+    max-width: 1600px; /* contenedor general de contenido del main */
+    margin: auto;
+}
