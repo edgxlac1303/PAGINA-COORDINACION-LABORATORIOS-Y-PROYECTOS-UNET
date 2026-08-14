@@ -73,24 +73,24 @@ footer p {
     font-size: 17px;
 }
 
-/*LOGOS DEL FOOTER*/
-.logos-footer {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 12px;
+/* NUEVO CONTENEDOR FLEXBOX */
+.contenedor-logos {
+    display: flex;       /* Pone las imágenes una al lado de la otra */
+    justify-content: center; /* 👈 ESTA LÍNEA centra el grupo de logos horizontalmente */
+    align-items: center; /* Las alinea verticalmente al centro */
+    gap: 10px;           /* Controla la separación entre los dos logos */
+    margin-top: 15px;    /* Separa los logos del texto de arriba */
 }
 
-/*LOGO UNET DEL FOOTER*/
+/* LOGO UNET */
 .logo-footer-unet {
     width: 80px;
     height: auto;
 }
 
-/*LOGO DECANATO DEL FOOTER*/
+/* LOGO DECANATO */
 .logo-footer-decanato {
     width: 65px;
     height: auto;
-    position: absolute;
-    margin-top:9px;
+    /* ❌ Eliminamos position: absolute y margin-top para que no se descoloque */
 }
