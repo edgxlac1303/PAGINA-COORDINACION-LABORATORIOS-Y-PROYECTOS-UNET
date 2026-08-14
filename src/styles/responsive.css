@@ -19,6 +19,12 @@
         width: 60px;
     }
 
+    .logo-decanato-header {
+        position: static;
+        width: 50px;
+        margin-top: 12px;
+    }
+
     .barra-superior p {
         font-size: 20px;
         line-height: 1.2;
@@ -45,11 +51,7 @@
         margin-top: 8px;
     }
 
-    .logo-decanato-header {
-        position: static;
-        width: 70px;
-        margin-top: 12px;
-    }
+    
 
     .buscador-header {
         width: 100%;
