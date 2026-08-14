@@ -61,32 +61,154 @@ import Layout from '../layouts/Layout.astro';
 
     <script is:inline>
         // RECORRIDO EDIFICIO 11
-        pannellum.viewer('visorEdificio11', {
+        // RECORRIDO EDIFICIO 11
+pannellum.viewer('visorEdificio11', {
+
+    default: {
+        firstScene: 'entradaEdificio11',
+        author: 'Coordinación de Laboratorios y Proyectos UNET',
+        autoLoad: true,
+        sceneFadeDuration: 1000,
+        hotSpotDebug: true
+    },
+
+    scenes: {
+
+        entradaEdificio11: {
+            title: 'Entrada - Edificio 11',
             type: 'equirectangular',
-            panorama: '/assets/recorridos360/prueba1.jpeg',
-            autoLoad: true,
-            title: 'Recorrido virtual - Edificio 11',
-            author: 'Coordinación de Laboratorios y Proyectos UNET',
+            panorama: '/assets/recorridos360/A-CETI/inicio.jpg',
             pitch: 0,
             yaw: 0,
             hfov: 100,
-            hotSpotDebug: true,
+
+            hotSpots: [
+                {
+                    pitch: -8.93,
+                    yaw: -123,
+                    type: 'scene',
+                    text: 'Avanzar al pasillo',
+                    sceneId: 'pasilloEdificio11',
+                    cssClass: 'hotspot-flecha'
+                },
+                {
+                    pitch: -124.56,
+                    yaw: 120,
+                    type: 'info',
+                    text: 'Entrada principal del Edificio 11',
+                    cssClass: 'hotspot-flecha'
+                }
+            ]
+        },
+
+        pasilloEdificio11: {
+            title: 'Pasillo - Edificio 11',
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/A-CETI/prueba-lab.jpeg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
 
             hotSpots: [
                 {
                     pitch: 0,
-                    yaw: 20,
-                    type: 'info',
-                    text: 'Aula 12C13 - Laboratorio de Bioquímica'
+                    yaw: 180,
+                    type: 'scene',
+                    text: 'Volver a la entrada',
+                    sceneId: 'entradaEdificio11'
                 },
                 {
-                    pitch: 12.91,
-                    yaw: 120,
+                    pitch: 0,
+                    yaw: 35,
+                    type: 'scene',
+                    text: 'Avanzar al laboratorio',
+                    sceneId: 'laboratorioEdificio11'
+                },
+                {
+                    pitch: 8,
+                    yaw: 90,
                     type: 'info',
-                    text: 'Entrada al laboratorio'
+                    text: 'Pasillo principal del Edificio 11'
                 }
             ]
-        });
+        },
+
+        laboratorioEdificio11: {
+            title: 'Laboratorio - Edificio 11',
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/A-CETI/inicio.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 180,
+                    type: 'scene',
+                    text: 'Volver al pasillo',
+                    sceneId: 'pasilloEdificio11'
+                },
+                {
+                    pitch: 5,
+                    yaw: 40,
+                    type: 'scene',
+                    text: 'Área de laboratorio',
+                    sceneId: 'xd'
+                }
+            ]
+        },
+
+        xd: {
+            title: 'Laboratorio - Edificio 11',
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/A-CETI/xd.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 180,
+                    type: 'scene',
+                    text: 'Volver al pasillo',
+                    sceneId: 'pasilloEdificio11'
+                },
+                {
+                    pitch: 5,
+                    yaw: 40,
+                    type: 'scene',
+                    text: 'Área de laboratorio',
+                    sceneId: 'pasilloEdificio11'
+                }
+            ]
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         // RECORRIDO EDIFICIO 12
@@ -121,7 +243,7 @@ import Layout from '../layouts/Layout.astro';
         // RECORRIDO EDIFICIO 31
         pannellum.viewer('visorEdificio31', {
             type: 'equirectangular',
-            panorama: '/assets/recorridos360/inicio.jpeg',
+            panorama: '/assets/recorridos360/inicio.jpg',
             autoLoad: true,
             title: 'Recorrido virtual - Edificio 31',
             author: 'Coordinación de Laboratorios y Proyectos UNET',

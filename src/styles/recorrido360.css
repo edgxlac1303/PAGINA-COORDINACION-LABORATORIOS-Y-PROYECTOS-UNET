@@ -20,14 +20,40 @@
     font-weight: bold !important;
     padding: 8px 12px !important;
     border-radius: 6px !important;
-    max-width: 220px !important;
+    max-width: 420px !important;
     line-height: 1.3 !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
 }
 
-/*PUNTOS DEL HOTSPOT*/
-#visorEdificio11 .pnlm-hotspot,
-#visorEdificio12 .pnlm-hotspot,
-#visorEdificio31 .pnlm-hotspot {
-    transform: scale(1.25);
+
+/*FLECHAS PARA CAMBIAR DE ESCENA*/
+#visorEdificio11 .pnlm-hotspot.pnlm-scene,
+#visorEdificio12 .pnlm-hotspot.pnlm-scene,
+#visorEdificio31 .pnlm-hotspot.pnlm-scene {
+    transform: scale(30);
+}
+
+
+/*FLECHA PERSONALIZADA DEL RECORRIDO 360*/
+#visorEdificio11 .hotspot-flecha {
+    width: 42px !important;
+    height: 42px !important;
+    margin-left: -21px !important;
+    margin-top: -21px !important;
+    background-color: #FEFEFE !important;
+    border: 2px solid #0F62AC !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/*ICONO DE LA FLECHA*/
+#visorEdificio11 .hotspot-flecha::before {
+    content: "↑";
+    color: #0F62AC;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
 }
