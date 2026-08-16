@@ -312,4 +312,18 @@
 .panel-ayuda-mantenimiento {
     padding: 20px;
 }
+
+/*PAGINACION DE LABORATORIOS EN TELEFONOS*/
+.paginacion-laboratorios {
+    gap: 8px;
+    margin-top: 28px;
 }
+
+.paginacion-laboratorios a,
+.paginacion-laboratorios span {
+    font-size: 14px;
+    padding: 9px 11px;
+}
+
+}
+
