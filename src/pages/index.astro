@@ -17,12 +17,12 @@ import CarruselNovedades from '../components/CarruselNovedades.astro';
         <HeroInicio />
 
         <section class="servicios_portal">
-            <h2>Servicios principales del portal</h2>
+            <h2>Servicios Principales del Portal</h2>
 
             <div class="contenedor-tarjetas">
                 <TarjetaServicio
                     titulo="Laboratorios"
-                    descripcion="Consulta información sobre los laboratorios disponibles, responsables y servicios principales."
+                    descripcion="Consulta información sobre los laboratorios disponibles, departamentos y servicios principales."
                     enlace="/laboratorios"
                     textoEnlace="Ver laboratorios"
                 />
@@ -33,26 +33,17 @@ import CarruselNovedades from '../components/CarruselNovedades.astro';
                     enlace="/proyectos"
                     textoEnlace="Ver proyectos"
                 />
-
+                <TarjetaServicio
+                    titulo="Ubicación 360°"
+                    descripcion="Consulta la ubicación de los laboratorios y accede al recorrido virtual."
+                    enlace="/ubicacion"
+                    textoEnlace="Ver ubicación"
+                />
                 <TarjetaServicio
                     titulo="Mantenimiento"
                     descripcion="Registra solicitudes de revisión, reparación o mantenimiento de los laboratorios."
                     enlace="/mantenimiento"
                     textoEnlace="Solicitar mantenimiento"
-                />
-
-                <TarjetaServicio
-                    titulo="Reseña histórica"
-                    descripcion="Accede a la memoria histórica de la Coordinación de Laboratorios y Proyectos de la UNET."
-                    enlace="/historia"
-                    textoEnlace="Ver reseña histórica"
-                />
-
-                <TarjetaServicio
-                    titulo="Ubicación 360°"
-                    descripcion="Consulta la ubicación de laboratorios y accede al recorrido virtual."
-                    enlace="/ubicacion"
-                    textoEnlace="Ver ubicación"
                 />
             </div>
         </section>

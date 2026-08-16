@@ -31,37 +31,155 @@
     text-decoration: none;
     font-weight: bold;
 }
+/*PAGINA DE MANTENIMIENTO*/
+.pagina-mantenimiento {
+    padding: 35px;
+}
+
+/*ENCABEZADO DE MANTENIMIENTO*/
+.encabezado-mantenimiento {
+    margin-bottom: 28px;
+}
+
+.encabezado-mantenimiento h2 {
+    color: #0F62AC;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.encabezado-mantenimiento p {
+    max-width: 950px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*DISTRIBUCION DEL FORMULARIO Y PANEL*/
+.mantenimiento-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+    gap: 30px;
+    align-items: start;
+}
 
 /*FORMULARIO DE MANTENIMIENTO*/
 .formulario-mantenimiento {
-    margin-top: 20px;
+    background-color: #f4f6f8;
+    border: 1px solid #c8dce4;
+    border-radius: 8px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 600px;
+    gap: 16px;
 }
 
-.formulario-mantenimiento input,
-.formulario-mantenimiento textarea {
-    padding: 10px;
+/*GRUPO DE CADA CAMPO*/
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+/*ETIQUETAS DEL FORMULARIO*/
+.grupo-campo label {
+    color: #222222;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*CAMPOS DEL FORMULARIO*/
+.grupo-campo input,
+.grupo-campo select,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 11px 12px;
     border: 1px solid #0F62AC;
-    border-radius: 4px;
+    border-radius: 5px;
     font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #FEFEFE;
+    color: #222222;
 }
 
-.formulario-mantenimiento textarea {
-    min-height: 120px;
+/*EFECTO AL SELECCIONAR CAMPOS*/
+.grupo-campo input:focus,
+.grupo-campo select:focus,
+.grupo-campo textarea:focus {
+    outline: none;
+    border: 2px solid #0F62AC;
+}
+
+/*TEXTAREA*/
+.grupo-campo textarea {
+    min-height: 130px;
     resize: vertical;
 }
 
+/*FILA DE DOS CAMPOS*/
+.fila-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+/*BOTON DEL FORMULARIO*/
 .formulario-mantenimiento button {
     background-color: #0F62AC;
     color: #FEFEFE;
     border: none;
-    padding: 10px 16px;
-    border-radius: 4px;
+    padding: 12px 18px;
+    border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+/*EFECTO DEL BOTON*/
+.formulario-mantenimiento button:hover {
+    background-color: #094a82;
+}
+
+/*PANEL DE AYUDA*/
+.panel-ayuda-mantenimiento {
+    background-color: #FEFEFE;
+    border: 1px solid #c8dce4;
+    border-top: 5px solid #0F62AC;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.panel-ayuda-mantenimiento h3 {
+    color: #0F62AC;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.panel-ayuda-mantenimiento p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.panel-ayuda-mantenimiento ul {
+    padding-left: 20px;
+    margin-bottom: 18px;
+}
+
+.panel-ayuda-mantenimiento li {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+/*AVISO DEL PANEL*/
+.aviso-mantenimiento {
+    background-color: #c8dce4;
+    color: #222222;
+    border-left: 4px solid #0F62AC;
+    padding: 14px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 /*VISOR DEMO*/

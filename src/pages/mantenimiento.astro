@@ -3,26 +3,200 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Mantenimiento | Coordinación de Laboratorios y Proyectos UNET">
-    <div class="contenedor"> <!-- contenedor general de contenido del main -->
-        <section class="pagina-contenido">
-            <h2>Solicitudes de mantenimiento</h2>
-            <p>
-                En esta sección se podrá registrar información relacionada con revisión,
-                reparación o mantenimiento de los espacios de laboratorio.
-            </p>
 
-            <form class="formulario-mantenimiento">
-                <label>Nombre del solicitante</label>
-                <input type="text" placeholder="Ingrese su nombre">
+    <div class="contenedor">
 
-                <label>Laboratorio</label>
-                <input type="text" placeholder="Ingrese el laboratorio">
+        <section class="pagina-contenido pagina-mantenimiento">
 
-                <label>Descripción de la solicitud</label>
-                <textarea placeholder="Describa la situación presentada"></textarea>
+            <div class="encabezado-mantenimiento">
+                <h2>Solicitudes de mantenimiento</h2>
 
-                <button type="button">Registrar solicitud</button>
-            </form>
+                <p>
+                    En esta sección se podrá registrar información relacionada con revisión,
+                    reparación o mantenimiento de los espacios de laboratorio.
+                </p>
+            </div>
+
+            <div class="mantenimiento-layout">
+
+                <form class="formulario-mantenimiento">
+
+                    <div class="grupo-campo">
+                        <label for="nombre">Nombre del solicitante</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            placeholder="Ingrese su nombre"
+                        >
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="contacto">Correo o contacto</label>
+                        <input 
+                            type="text" 
+                            id="contacto" 
+                            name="contacto" 
+                            placeholder="Ingrese un correo o número de contacto"
+                        >
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="laboratorio">Laboratorio</label>
+
+                        <select id="laboratorio" name="laboratorio">
+                            <option value="">Seleccione un laboratorio</option>
+
+                            <option value="BIOQUIMICA">BIOQUÍMICA - QUÍMICA - Aula 12C13</option>
+                            <option value="QUIMICA ANALITICA">QUÍMICA ANALÍTICA - QUÍMICA - Aula 12C13</option>
+                            <option value="QUIMICA GENERAL I 071">QUÍMICA GENERAL I (071) - QUÍMICA</option>
+                            <option value="QUIMICA GENERAL I 072">QUÍMICA GENERAL I (072) - QUÍMICA</option>
+                            <option value="QUIMICA ORGANICA">QUÍMICA ORGÁNICA - QUÍMICA</option>
+                            <option value="QUIMICA II">QUÍMICA II - QUÍMICA</option>
+
+                            <option value="SISTEMA DE COMUNICACIONES E INGENIERIA DE REDES">SISTEMA DE COMUNICACIONES E INGENIERÍA DE REDES - ELECTRÓNICA - Aula 11C9</option>
+                            <option value="INSTRUMENTACION Y CONTROL">INSTRUMENTACIÓN Y CONTROL - ELECTRÓNICA - Aula 11B11</option>
+                            <option value="PROYECTO DE SISTEMAS CONTROL E INSTRUMENTACION INDUSTRIAL">PROYECTO DE SISTEMAS CONTROL E INSTRUMENTACIÓN INDUSTRIAL - ELECTRÓNICA - Aula 11B12</option>
+                            <option value="PROYECTO DE INSTRUMENTACION ELECTRONICA">PROYECTO DE INSTRUMENTACIÓN ELECTRÓNICA - ELECTRÓNICA - Aula 11B11</option>
+                            <option value="ELECTRONICA ANALOGICA">ELECTRÓNICA ANALÓGICA - ELECTRÓNICA - Aula 11C10</option>
+                            <option value="CIRCUITOS Y MEDICIONES">CIRCUITOS Y MEDICIONES - ELECTRÓNICA - Aula 11C12</option>
+                            <option value="SISTEMAS DIGITALES">SISTEMAS DIGITALES - ELECTRÓNICA - Aula 11C16</option>
+                            <option value="MICROPROCESADORES">MICROPROCESADORES - ELECTRÓNICA</option>
+                            <option value="INGENIERIA ELECTRICA Y ELECTROTECNIA">INGENIERÍA ELÉCTRICA Y ELECTROTECNIA - ELECTRÓNICA - Aula 11B06</option>
+                            <option value="TECNOLOGIA ELECTRICA">TECNOLOGÍA ELÉCTRICA - ELECTRÓNICA - Aula 11B08</option>
+                            <option value="TECNOLOGIA ELECTRONICA">TECNOLOGÍA ELECTRÓNICA - ELECTRÓNICA - Aula 11B16</option>
+                            <option value="ELECTRONICA INDUSTRIAL PROFEI">ELECTRÓNICA INDUSTRIAL (PROFEI) - ELECTRÓNICA - Aula 11B17</option>
+                            <option value="RF Y MICROONDAS">RF Y MICROONDAS - ELECTRÓNICA - Aula 11C167</option>
+
+                            <option value="COMPUTACION VALERIO WONG">COMPUTACIÓN VALERIO WONG - INFORMÁTICA - Aula 12B4</option>
+                            <option value="SALA DE ARQUITECTURA">SALA DE ARQUITECTURA - INFORMÁTICA - Edificio 12</option>
+
+                            <option value="COMPONENTES CONSTRUCTIVOS">COMPONENTES CONSTRUCTIVOS - ARQUITECTURA</option>
+
+                            <option value="FISICA I">FÍSICA I - MATEMÁTICA Y FÍSICA</option>
+                            <option value="FISICA II">FÍSICA II - MATEMÁTICA Y FÍSICA</option>
+
+                            <option value="RESISTENCIA DE MATERIALES">RESISTENCIA DE MATERIALES - MECÁNICA</option>
+                            <option value="MATERIALES">MATERIALES - MECÁNICA - Aula 11A8</option>
+                            <option value="MAQUINAS Y HERRAMIENTAS">MÁQUINAS Y HERRAMIENTAS - MECÁNICA</option>
+                            <option value="TERMODINAMICA II">TERMODINÁMICA II - MECÁNICA</option>
+                            <option value="PLANTA DE POTENCIA Y TURBOMAQUINAS">PLANTA DE POTENCIA Y TURBOMÁQUINAS - MECÁNICA</option>
+                            <option value="CONFORMADO DE MATERIALES CESAR GONZALEZ">CONFORMADO DE MATERIALES “CÉSAR GONZÁLEZ” - MECÁNICA</option>
+                            <option value="TRANSFERENCIA DE CALOR">TRANSFERENCIA DE CALOR - MECÁNICA - Aula 11A14</option>
+                            <option value="ENERGIAS ALTERNATIVAS">ENERGÍAS ALTERNATIVAS - MECÁNICA</option>
+                            <option value="DISEÑO MECANICO">DISEÑO MECÁNICO - MECÁNICA - Aula 12B9</option>
+                            <option value="MECANICA DE FLUIDOS">MECÁNICA DE FLUIDOS - MECÁNICA - Aula 11A7</option>
+
+                            <option value="INGENIERIA DE METODOS HERNANDO CACERES">INGENIERÍA DE MÉTODOS “HERNANDO CÁCERES” - INDUSTRIAL - Aula 12C19</option>
+                            <option value="SIMULACION">SIMULACIÓN - INDUSTRIAL - Edificio B</option>
+
+                            <option value="PAVIMENTOS">PAVIMENTOS - CIVIL</option>
+                            <option value="MATERIALES SUELOS Y CONCRETOS">MATERIALES, SUELOS Y CONCRETOS - CIVIL</option>
+
+                            <option value="APICULTURA">APICULTURA - PRODUCCIÓN ANIMAL - Tuquerena/Rubio</option>
+                            <option value="ANATOMIA ANIMAL">ANATOMÍA ANIMAL - PRODUCCIÓN ANIMAL</option>
+                            <option value="MICROBIOLOGIA GENERAL APLICADA Y AMBIENTAL">MICROBIOLOGÍA GENERAL, APLICADA Y AMBIENTAL - PRODUCCIÓN ANIMAL - Aula 12D11</option>
+                            <option value="FISIOLOGIA ANIMAL">FISIOLOGÍA ANIMAL - PRODUCCIÓN ANIMAL</option>
+                            <option value="SANIDAD ANIMAL">SANIDAD ANIMAL - PRODUCCIÓN ANIMAL</option>
+                            <option value="PARASITOLOGIA">PARASITOLOGÍA - PRODUCCIÓN ANIMAL</option>
+                            <option value="GENETICA">GENÉTICA - PRODUCCIÓN ANIMAL - Aula 12C08</option>
+                            <option value="INDUSTRIAS DE LA CARNE">INDUSTRIAS DE LA CARNE - PRODUCCIÓN ANIMAL - Aula 12C03</option>
+                            <option value="INDUSTRIAS DE LA LECHE">INDUSTRIAS DE LA LECHE - PRODUCCIÓN ANIMAL - Aula 12C03</option>
+                            <option value="NUTRICION ANIMAL">NUTRICIÓN ANIMAL - PRODUCCIÓN ANIMAL - Aula 12C09</option>
+                            <option value="ZOOLOGIA AGRICOLA">ZOOLOGÍA AGRÍCOLA - PRODUCCIÓN ANIMAL - Aula 12D26</option>
+                            <option value="BIOLOGIA">BIOLOGÍA - PRODUCCIÓN ANIMAL - Aula 12D26</option>
+                            <option value="AREA DE APOYO MICROBIOLOGICO Y ESTERILIZACION AUTOCLAVE">ÁREA DE APOYO MICROBIOLÓGICO Y ESTERILIZACIÓN “AUTOCLAVE” - Aula 12D16</option>
+
+                            <option value="INGENIERIA AMBIENTAL">INGENIERÍA AMBIENTAL - AMBIENTAL</option>
+
+                            <option value="PLANTA DE FRUTAS Y VEGETALES">PLANTA DE FRUTAS Y VEGETALES - AGROINDUSTRIAL - Tuquerena/Rubio</option>
+
+                            <option value="SUELOS">SUELOS - AGRONÓMICA</option>
+                            <option value="BOTANICA AGRICOLA">BOTÁNICA AGRÍCOLA - AGRONÓMICA - Aula 12D23</option>
+                            <option value="CULTIVO DE TEJIDOS">CULTIVO DE TEJIDOS - AGRONÓMICA - Aula 12D05</option>
+                            <option value="FISIOLOGIA VEGETAL">FISIOLOGÍA VEGETAL - AGRONÓMICA - Aula 12D04</option>
+                            <option value="ENTOMOLOGIA">ENTOMOLOGÍA - AGRONÓMICA - Aula 12C04</option>
+                            <option value="FITOPATOLOGIA">FITOPATOLOGÍA - AGRONÓMICA - Aula 12D14</option>
+                            <option value="AGROECOLOGIA">AGROECOLOGÍA - AGRONÓMICA</option>
+                            <option value="FUNDAMENTOS DE HIDRAULICA">FUNDAMENTOS DE HIDRÁULICA - AGRONÓMICA</option>
+                            <option value="PROTECCION VEGETAL">PROTECCIÓN VEGETAL - AGRONÓMICA</option>
+                            <option value="MANEJO DE FERTILIDAD Y SUELOS">MANEJO DE FERTILIDAD Y SUELOS - AGRONÓMICA</option>
+                            <option value="FORRAJICULTURA">FORRAJICULTURA - AGRONÓMICA - Aula 12D24</option>
+                        </select>
+                    </div>
+
+                    <div class="fila-formulario">
+
+                        <div class="grupo-campo">
+                            <label for="tipo">Tipo de solicitud</label>
+
+                            <select id="tipo" name="tipo">
+                                <option value="">Seleccione una opción</option>
+                                <option value="revision">Revisión</option>
+                                <option value="reparacion">Reparación</option>
+                                <option value="mantenimiento-preventivo">Mantenimiento preventivo</option>
+                                <option value="mantenimiento-correctivo">Mantenimiento correctivo</option>
+                                <option value="equipos">Reporte de equipos</option>
+                                <option value="infraestructura">Infraestructura</option>
+                            </select>
+                        </div>
+
+                        <div class="grupo-campo">
+                            <label for="prioridad">Prioridad</label>
+
+                            <select id="prioridad" name="prioridad">
+                                <option value="">Seleccione prioridad</option>
+                                <option value="baja">Baja</option>
+                                <option value="media">Media</option>
+                                <option value="alta">Alta</option>
+                                <option value="urgente">Urgente</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="descripcion">Descripción de la solicitud</label>
+
+                        <textarea 
+                            id="descripcion" 
+                            name="descripcion" 
+                            placeholder="Describa la situación presentada"
+                        ></textarea>
+                    </div>
+
+                    <button type="button">Registrar solicitud</button>
+
+                </form>
+
+                <aside class="panel-ayuda-mantenimiento">
+
+                    <h3>¿Qué se puede reportar?</h3>
+
+                    <p>
+                        Este formulario está orientado al registro de situaciones que requieran
+                        atención dentro de los espacios de laboratorio.
+                    </p>
+
+                    <ul>
+                        <li>Revisión de equipos o mobiliario.</li>
+                        <li>Fallas eléctricas, mecánicas o de infraestructura.</li>
+                        <li>Necesidades de reparación o acondicionamiento.</li>
+                        <li>Seguimiento de mantenimiento preventivo o correctivo.</li>
+                    </ul>
+
+                    <div class="aviso-mantenimiento">
+                        <strong>Nota:</strong>
+                        La solicitud registrada servirá como base para organizar la atención
+                        y seguimiento correspondiente.
+                    </div>
+
+                </aside>
+
+            </div>
+
         </section>
+
     </div>
+
 </Layout>
