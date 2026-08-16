@@ -284,4 +284,32 @@
     transform: scale(1.1);
 }
 
+
+
+/*MANTENIMIENTO EN TELEFONOS*/
+.pagina-mantenimiento {
+    padding: 22px;
+}
+
+.encabezado-mantenimiento h2 {
+    font-size: 28px;
+}
+
+.mantenimiento-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+.formulario-mantenimiento {
+    padding: 20px;
+}
+
+.fila-formulario {
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.panel-ayuda-mantenimiento {
+    padding: 20px;
+}
 }
