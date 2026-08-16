@@ -15,6 +15,26 @@ import Layout from '../layouts/Layout.astro';
                 permitiendo visualizar espacios académicos y laboratorios de la universidad.
             </p>
 
+            <div class="buscador-recorrido"> <!-- BUSCADOR DEL RECORRIDO 360 -->
+
+                <input 
+                    type="text" 
+                    id="buscarLaboratorioBloque1" 
+                    placeholder="Buscar laboratorio en el recorrido"
+                    list="listaLaboratoriosBloque1"
+                >
+
+                <datalist id="listaLaboratoriosBloque1">
+                    <option value="Laboratorio de física"></option>
+                    <option value="Laboratorio de Química Analítica"></option>,
+                </datalist>
+
+                <button id="botonBuscarLaboratorioBloque1">
+                    Buscar
+                </button>
+
+            </div>
+
             <div id="visorEdificio11"></div>
 
         </section>
@@ -62,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
     <script is:inline>
         // RECORRIDO EDIFICIO 11
         // RECORRIDO EDIFICIO 11
-pannellum.viewer('visorEdificio11', {
+const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
 
     default: {
         firstScene: 'entradaEdificio11',
@@ -264,7 +284,7 @@ pannellum.viewer('visorEdificio11', {
                     pitch: 26.17,
                     yaw: 29.14,
                     type: 'info',
-                    text: 'Laboratorio de Química',
+                    text: 'Laboratorio de Física',
                 },
                 {
                     pitch: 0.80,
@@ -855,7 +875,58 @@ pannellum.viewer('visorEdificio11', {
     }
 });
 
+/*LISTA DE LABORATORIOS BUSCABLES DEL BLOQUE 1*/
+const laboratoriosBloque1 = [
+    {
+        nombre: 'Laboratorio de Física',
+        escena: 'labs1pasillo1ceti',
+        pitch: 26.17,
+        yaw: 29.14,
+        hfov: 100
+    },
+    {
+        nombre: 'Laboratorio de Química Analítica',
+        escena: 'labs2calle3',
+        pitch: 7.33,
+        yaw: 110.44,
+        hfov: 100
+    },
+];
 
+/*ELEMENTOS DEL BUSCADOR DEL RECORRIDO 360*/
+const inputBuscarBloque1 = document.getElementById('buscarLaboratorioBloque1');
+const botonBuscarBloque1 = document.getElementById('botonBuscarLaboratorioBloque1');
+
+/*FUNCION PARA BUSCAR UN LABORATORIO EN EL RECORRIDO*/
+function buscarLaboratorioBloque1() {
+    const textoBuscado = inputBuscarBloque1.value.trim().toLowerCase();
+
+    const laboratorioEncontrado = laboratoriosBloque1.find((laboratorio) => {
+        return laboratorio.nombre.toLowerCase() === textoBuscado;
+    });
+
+    if (!laboratorioEncontrado) {
+        alert('Laboratorio no encontrado en el recorrido.');
+        return;
+    }
+
+    recorridoBloque1.loadScene(
+        laboratorioEncontrado.escena,
+        laboratorioEncontrado.pitch,
+        laboratorioEncontrado.yaw,
+        laboratorioEncontrado.hfov
+    );
+}
+
+/*BUSCAR AL HACER CLIC EN EL BOTON*/
+botonBuscarBloque1.addEventListener('click', buscarLaboratorioBloque1);
+
+/*BUSCAR AL PRESIONAR ENTER*/
+inputBuscarBloque1.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        buscarLaboratorioBloque1();
+    }
+});
 
 
 
