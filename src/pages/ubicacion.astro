@@ -25,8 +25,27 @@ import Layout from '../layouts/Layout.astro';
                 >
 
                 <datalist id="listaLaboratoriosBloque1">
-                    <option value="Laboratorio de física"></option>
-                    <option value="Laboratorio de Química Analítica"></option>,
+                    <option value="Entrada principal del Edificio 11"></option>
+                    <option value="Laboratorio de Química 071"></option>
+                    <option value="Laboratorio de Química Orgánica"></option>
+                    <option value="Laboratorio de Química 072"></option>
+                    <option value="Laboratorio de Química 2"></option>
+                    <option value="Laboratorio de Química Orgánica"></option>
+                    <option value="Laboratorio de Física II"></option>
+                    <option value="Laboratorio de Física I"></option>
+                    <option value="Laboratorio de Física II"></option>
+                    <option value="Laboratorio de Física I"></option>
+                    <option value="Laboratorio de Máquinas y Herramientas"></option>
+                    <option value="Laboratorio de Conformados"></option>
+                    <option value="Laboratorio de TurboMáquinas y Planta de Poténncia"></option>
+                    <option value="Laboratorio de Pavimentos"></option>
+                    <option value="Laboratorio de TermoFluídos y Planta de Poténcia"></option>
+                    <option value="Laboratorio de Fisiología y Sanidad Animal"></option>
+                    <option value="Laboratorio de Anatomía"></option>
+                    <option value="Laboratorio de Suelos"></option>
+                    <option value="Laboratorio de Ingeniería Ambiental"></option>
+                    <option value="Laboratorio de Componentes Constructivos "></option>
+                    <option value="Laboratorio de Ingeniería Ambiental"></option>
                 </datalist>
 
                 <button id="botonBuscarLaboratorioBloque1">
@@ -56,7 +75,7 @@ import Layout from '../layouts/Layout.astro';
                 <input 
                     type="text" 
                     id="buscarLaboratorioBloque2" 
-                    placeholder="Buscar laboratorio en el recorrido"
+                    placeholder="Busca tu Laboratorio"
                     list="listaLaboratoriosBloque2"
                 >
 
@@ -854,21 +873,155 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
 });
 
 /*LISTA DE LABORATORIOS BUSCABLES DEL BLOQUE 1*/
+/*LISTA DE LABORATORIOS BUSCABLES DEL BLOQUE 1*/
 const laboratoriosBloque1 = [
     {
-        nombre: 'Laboratorio de Física',
+        nombre: 'Entrada principal del Edificio 11',
+        escena: 'entradaEdificio11',
+        pitch: -3.6,
+        yaw: -77.4,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Química 071',
         escena: 'labs1pasillo1ceti',
         pitch: 26.17,
         yaw: 29.14,
-        hfov: 100
+        hfov: 80
     },
     {
-        nombre: 'Laboratorio de Química Analítica',
+        nombre: 'Laboratorio de Química Orgánica',
+        escena: 'labs2pasillo1ceti',
+        pitch: 12.36,
+        yaw: -42.24,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Química 072',
+        escena: 'labs2pasillo1ceti',
+        pitch: 4.79,
+        yaw: 165.79,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Química 2',
+        escena: 'labs3pasillo1ceti',
+        pitch: 8,
+        yaw: 132.88,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Química Orgánica',
+        escena: 'labs3pasillo1ceti',
+        pitch: 2.10,
+        yaw: -7.44,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Física II',
+        escena: 'labs1pasillo2ceti',
+        pitch: 7.58,
+        yaw: -25.02,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Física I',
+        escena: 'labs1pasillo2ceti',
+        pitch: 2.46,
+        yaw: 156.51,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Física II',
+        escena: 'labs2pasillo2ceti',
+        pitch: 5.28,
+        yaw: 12.34,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Física I',
+        escena: 'labs2pasillo2ceti',
+        pitch: 6.92,
+        yaw: 127.70,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Máquinas y Herramientas',
+        escena: 'labs1calle2',
+        pitch: 8.51,
+        yaw: -86.47,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Conformados',
+        escena: 'labs1calle2',
+        pitch: 6.57,
+        yaw: 85.16,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de TurboMáquinas y Planta de Poténncia',
+        escena: 'labs2calle2',
+        pitch: 11,
+        yaw: 61,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Pavimentos',
+        escena: 'labs2calle2',
+        pitch: 6.3,
+        yaw: 140,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de TermoFluídos y Planta de Poténcia',
+        escena: 'labs2calle2',
+        pitch: 9.47,
+        yaw: -103.19,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Fisiología y Sanidad Animal',
+        escena: 'labs1calle3',
+        pitch: 6.10,
+        yaw: 24.46,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Anatomía',
         escena: 'labs2calle3',
         pitch: 7.33,
         yaw: 110.44,
-        hfov: 100
+        hfov: 80
     },
+    {
+        nombre: 'Laboratorio de Suelos',
+        escena: 'labs3calle4',
+        pitch: 3.53,
+        yaw: -147.42,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Ingeniería Ambiental',
+        escena: 'labs2calle4',
+        pitch: 7.07,
+        yaw: 12.93,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Componentes Constructivos ',
+        escena: 'labs1calle4',
+        pitch: 6.06,
+        yaw: 64.81,
+        hfov: 80
+    },
+    {
+        nombre: 'Laboratorio de Ingeniería Ambiental',
+        escena: 'labs1calle4',
+        pitch: 3.64,
+        yaw: -127.21,
+        hfov: 80
+    }
 ];
 
 /*ELEMENTOS DEL BUSCADOR DEL RECORRIDO 360*/
