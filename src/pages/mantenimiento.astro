@@ -32,12 +32,12 @@ import Layout from '../layouts/Layout.astro';
                     </div>
 
                     <div class="grupo-campo">
-                        <label for="contacto">Correo </label>
+                        <label for="correo">Correo electrónico</label>
                         <input 
-                            type="text" 
-                            id="contacto" 
-                            name="contacto" 
-                            placeholder="Ingrese su correo  electrónicio (@unet.edu.ve)"
+                            type="email" 
+                            id="correo" 
+                            name="correo" 
+                            placeholder="Ingrese su correo electrónico (@unet.edu.ve)"
                         >
                     </div>
 
@@ -165,7 +165,7 @@ import Layout from '../layouts/Layout.astro';
                         ></textarea>
                     </div>
 
-                    <button type="button">Registrar solicitud</button>
+                    <button type="button" id="btnEnviarSolicitud">Registrar solicitud</button>
 
                 </form>
 
@@ -198,5 +198,69 @@ import Layout from '../layouts/Layout.astro';
         </section>
 
     </div>
+
+<script is:inline>
+    // ENVIO DE SOLICITUD POR CORREO PARA FASE DE PRUEBA
+
+    const botonEnviarSolicitud = document.getElementById("btnEnviarSolicitud");
+
+    botonEnviarSolicitud.addEventListener("click", function () {
+
+        const nombre = document.getElementById("nombre").value;
+        const correo = document.getElementById("correo").value;
+        const laboratorio = document.getElementById("laboratorio").value;
+        const tipo = document.getElementById("tipo").value;
+        const prioridad = document.getElementById("prioridad").value;
+        const descripcion = document.getElementById("descripcion").value;
+
+        const correoDestino = "webmaster@unet.edu.ve";
+
+        const asunto = "Solicitud de mantenimiento de laboratorio";
+
+        const cuerpoMensaje = `
+Solicitud de mantenimiento
+
+Nombre del solicitante: ${nombre}
+Correo: ${correo}
+Laboratorio: ${laboratorio}
+Tipo de solicitud: ${tipo}
+Prioridad: ${prioridad}
+
+Descripción de la solicitud:
+${descripcion}
+        `;
+
+        const enlaceCorreo = 
+            "mailto:" + correoDestino +
+            "?subject=" + encodeURIComponent(asunto) +
+            "&body=" + encodeURIComponent(cuerpoMensaje);
+
+        window.location.href = enlaceCorreo;
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </Layout>
