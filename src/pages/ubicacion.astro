@@ -950,33 +950,427 @@ inputBuscarBloque1.addEventListener('keydown', (event) => {
 
 
 
-        // RECORRIDO EDIFICIO 12
-        pannellum.viewer('visorEdificio12', {
+        /*RECORRIDO 360 DEL EDIFICIO 12*/
+const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
+
+    /*CONFIGURACION GENERAL DEL RECORRIDO*/
+    default: {
+        firstScene: 'hall',
+        sceneFadeDuration: 1000,
+        autoLoad: true
+    },
+
+    hotSpotDebug: true,
+
+    /*ESCENAS DEL EDIFICIO 12*/
+    scenes: {
+
+        /*PRIMERA ESCENA: ENTRADA DEL EDIFICIO 12*/
+        hall: {
             type: 'equirectangular',
-            panorama: '/assets/recorridos360/prueba1.jpeg',
-            autoLoad: true,
-            title: 'Recorrido virtual - Edificio 12',
+            panorama: '/assets/recorridos360/C-1/hall.jpg',
+            title: 'Entrada del Edificio 12',
             author: 'Coordinación de Laboratorios y Proyectos UNET',
             pitch: 0,
             yaw: 0,
             hfov: 100,
-            hotSpotDebug: true,
 
             hotSpots: [
                 {
                     pitch: 0,
-                    yaw: 20,
-                    type: 'info',
-                    text: 'Laboratorios del Edificio 12'
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'Avanzar al Valerio Wong',
+                    sceneId: 'entradavalerio',
                 },
                 {
-                    pitch: 5,
-                    yaw: 90,
-                    type: 'info',
-                    text: 'Pasillo principal'
+                    pitch: 0,
+                    yaw: 20,
+                    type: 'scene',
+                    text: 'Subir',
+                    sceneId: 'entradapiso2',
                 }
             ]
-        });
+        },
+
+        entradavalerio: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/entradavalerio.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'valerio1',
+                },
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'Volver',
+                    sceneId: 'hall',
+                },
+                {
+                    pitch: 30,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'subir',
+                    sceneId: 'piso2',
+                },
+            ]
+        },
+
+        valerio1: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/valerio1.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'valerio2',
+                },
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'Volver',
+                    sceneId: 'entradavalerio',
+                },
+            ]
+        },
+
+        valerio2: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/valerio2.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'Volver',
+                    sceneId: 'valerio1',
+                },
+            ]
+        },
+
+        piso2: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/piso2.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'pasillo1piso2',
+                },
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'Bajar',
+                    sceneId: 'entradavalerio',
+                },
+                {
+                    pitch: 30,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'subir',
+                    sceneId: 'piso3',
+                },
+            ]
+        },
+
+        pasillo1piso2: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/pasillo1piso2.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'pasillo2piso2',
+                },
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'Volver',
+                    sceneId: 'piso2',
+                },
+            ]
+        },
+
+        pasillo2piso2: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/pasillo2piso2.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'Volver',
+                    sceneId: 'pasillo1piso2',
+                },
+            ]
+        },
+
+        piso3: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/piso3.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'pasillo1piso3',
+                },
+                {
+                    pitch: 20,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Siguiente edificio',
+                    sceneId: 'c2piso3',
+                },
+                {
+                    pitch: -10,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'bajar',
+                    sceneId: 'piso2',
+                },
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'subir',
+                    sceneId: 'piso4',
+                },
+            ]
+        },
+
+        pasillo1piso3: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/pasillo1piso3.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'pasillo2piso3',
+                },
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'piso3',
+                },
+            ]
+        },
+
+        pasillo2piso3: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/pasillo2piso3.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'pasillo3piso3',
+                },
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'pasillo1piso3',
+                },
+            ]
+        },
+
+        pasillo3piso3: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/pasillo3piso3.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'pasillo2piso3',
+                },
+            ]
+        },
+
+        c2piso3: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2piso3.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'piso3',
+                },
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'c2pasillo1piso3',
+                },
+            ]
+        },
+
+        c2pasillo1piso3: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo1piso3.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'c2piso3',
+                },
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'c2pasillo2piso3',
+                },
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'c2pasillo4piso3',
+                },
+            ]
+        },
+
+        c2pasillo2piso3: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo2piso3.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'c2pasillo1piso3',
+                },
+                {
+                    pitch: 0,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'c2pasillo3piso3',
+                },
+            ]
+        },
+
+        c2pasillo3piso3: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo3piso3.jpg',
+            pitch: 0,
+            yaw: 0,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'c2pasillo2piso3',
+                },
+            ]
+        },
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         // RECORRIDO EDIFICIO 31
