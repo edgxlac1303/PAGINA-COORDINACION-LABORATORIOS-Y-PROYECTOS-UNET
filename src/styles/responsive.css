@@ -272,15 +272,13 @@
     }
 /*VISORES 360 EN TELEFONOS*/
 #visorEdificio11,
-#visorEdificio12,
-#visorEdificio31 {
+#visorEdificio12 {
     height: 360px;
 }
 
 /*TEXTOS DE LOS HOTSPOTS EN TELEFONO*/
 #visorEdificio11 .pnlm-tooltip span,
-#visorEdificio12 .pnlm-tooltip span,
-#visorEdificio31 .pnlm-tooltip span {
+#visorEdificio12 .pnlm-tooltip span {
     font-size: 13px !important;
     padding: 6px 9px !important;
     max-width: 150px !important;
@@ -291,8 +289,7 @@
 
 /*PUNTOS DEL RECORRIDO 360 EN TELEFONO*/
 #visorEdificio11 .pnlm-hotspot,
-#visorEdificio12 .pnlm-hotspot,
-#visorEdificio31 .pnlm-hotspot {
+#visorEdificio12 .pnlm-hotspot {
     transform: scale(1.1);
 }
 

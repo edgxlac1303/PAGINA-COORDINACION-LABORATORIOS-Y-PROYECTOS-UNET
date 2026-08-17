@@ -51,29 +51,32 @@ import Layout from '../layouts/Layout.astro';
                 En esta sección se muestra el recorrido virtual correspondiente al Edificio 12,
                 donde se encuentran distintos espacios académicos y laboratorios de la institución.
             </p>
+            <div class="buscador-recorrido"> <!-- BUSCADOR DEL RECORRIDO 360 DEL BLOQUE 2 -->
 
+                <input 
+                    type="text" 
+                    id="buscarLaboratorioBloque2" 
+                    placeholder="Buscar laboratorio en el recorrido"
+                    list="listaLaboratoriosBloque2"
+                >
+
+                <datalist id="listaLaboratoriosBloque2">
+                    <option value="Laboratorios Valerio Wong"></option>
+                    <option value="Laboratorio"></option>
+                </datalist>
+
+                <button id="botonBuscarLaboratorioBloque2">
+                    Buscar
+                </button>
+
+            </div>
+            
             <div id="visorEdificio12"></div>
 
         </section>
 
     </div>
 
-    <div class="contenedor">
-
-        <section class="pagina-contenido">
-
-            <h2>Recorrido virtual 360° - Edificio 31</h2>
-
-            <p>
-                En esta sección se muestra el recorrido virtual correspondiente al Edificio 31,
-                permitiendo visualizar otros espacios de laboratorios de la Universidad Nacional Experimental del Táchira.
-            </p>
-
-            <div id="visorEdificio31"></div>
-
-        </section>
-
-    </div>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.css">
 
@@ -1387,7 +1390,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             hotSpots: [
                 {
                     pitch: -2.27,
-                    yaw: 83.83,
+                    yaw: 84.03,
                     type: 'scene',
                     text: 'volver',
                     sceneId: 'c2pasillo1piso3',
@@ -1593,53 +1596,55 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
 
 });
 
+/*LISTA DE LABORATORIOS BUSCABLES DEL BLOQUE 2*/
+const laboratoriosBloque2 = [
+    {
+        nombre: 'Laboratorios Valerio Wong',
+        escena: 'entradavalerio',
+        pitch: 14.66,
+        yaw: 18.68,
+        hfov: 100
+    },
+    {
+        nombre: 'Laboratorio',
+        escena: 'c2pasillo2piso1',
+        pitch: 7.99,
+        yaw: 168.92,
+        hfov: 100
+    }
+];
 
+/*ELEMENTOS DEL BUSCADOR DEL RECORRIDO 360 DEL BLOQUE 2*/
+const inputBuscarBloque2 = document.getElementById('buscarLaboratorioBloque2');
+const botonBuscarBloque2 = document.getElementById('botonBuscarLaboratorioBloque2');
 
+/*FUNCION PARA BUSCAR UN LABORATORIO EN EL RECORRIDO DEL BLOQUE 2*/
+function buscarLaboratorioBloque2() {
+    const textoBuscado = inputBuscarBloque2.value.trim().toLowerCase();
 
+    const laboratorioEncontrado = laboratoriosBloque2.find((laboratorio) => {
+        return laboratorio.nombre.toLowerCase() === textoBuscado;
+    });
 
+    if (!laboratorioEncontrado) {
+        alert('Laboratorio no encontrado en el recorrido del Edificio 12.');
+        return;
+    }
 
+    recorridoBloque2.loadScene(
+        laboratorioEncontrado.escena,
+        laboratorioEncontrado.pitch,
+        laboratorioEncontrado.yaw,
+        laboratorioEncontrado.hfov
+    );
+}
 
+/*BUSCAR AL HACER CLIC EN EL BOTON*/
+botonBuscarBloque2.addEventListener('click', buscarLaboratorioBloque2);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // RECORRIDO EDIFICIO 31
-        pannellum.viewer('visorEdificio31', {
-            type: 'equirectangular',
-            panorama: '/assets/recorridos360/inicio.jpg',
-            autoLoad: true,
-            title: 'Recorrido virtual - Edificio 31',
-            author: 'Coordinación de Laboratorios y Proyectos UNET',
-            pitch: 0,
-            yaw: 0,
-            hfov: 100,
-            hotSpotDebug: true,
-
-            hotSpots: [
-                {
-                    pitch: 0,
-                    yaw: 20,
-                    type: 'info',
-                    text: 'Laboratorios del Edificio 31'
-                },
-                {
-                    pitch: -4,
-                    yaw: 110,
-                    type: 'info',
-                    text: 'Área de acceso'
-                }
-            ]
-        });
-    </script>
-
-</Layout>
+/*BUSCAR AL PRESIONAR ENTER*/
+inputBuscarBloque2.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        buscarLaboratorioBloque2();
+    }
+});
