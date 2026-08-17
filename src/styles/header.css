@@ -30,16 +30,16 @@ header {
 }
 
 .logo-unet {
-    width: 90px;
-    max-width: 90px;
+    width: 110px;
+    max-width: 110px;
     height: auto;
     display: block;
 }
 
 /* LOGO DEL DECANATO EN LA PARTE DERECHA */
 .barra-superior .logo-decanato-header {
-    width: 80px !important;
-    max-width: 80px !important;
+    width: 60px !important;
+    max-width: 60px !important;
     height: auto !important;
     max-height: 75px !important;
     display: block !important;
