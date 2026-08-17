@@ -1189,6 +1189,13 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
                     sceneId: 'piso2',
                 },
                 {
+                    pitch: -5.5,
+                    yaw: -6.8,
+                    type: 'scene',
+                    text: 'seguir',
+                    sceneId: 'pasillo4piso3',
+                },
+                {
                     pitch: 5.57,
                     yaw: 17.09,
                     type: 'scene',
@@ -1262,6 +1269,45 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
                     type: 'scene',
                     text: 'volver',
                     sceneId: 'pasillo2piso3',
+                },
+            ]
+        },
+
+        piso4: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-1/piso4.jpg',
+            pitch: 0,
+            yaw: 83,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0.10,
+                    yaw: 83.88,
+                    type: 'scene',
+                    text: 'bajar',
+                    sceneId: 'piso3 ',
+                },
+                {
+                    pitch: 0.10,
+                    yaw: -83.88,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'pasillo1piso4',
+                },
+                {
+                    pitch: 0.10,
+                    yaw: -83.88,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'pasillo2piso4',
+                },
+                {
+                    pitch: 0.10,
+                    yaw: -83.88,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'pasillo3piso4',
                 },
             ]
         },
