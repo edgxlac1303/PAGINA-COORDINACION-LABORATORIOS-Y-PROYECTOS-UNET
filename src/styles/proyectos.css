@@ -1,0 +1,241 @@
+/*PAGINA DE PROYECTOS*/
+.pagina-proyectos {
+    background-color: #FEFEFE;
+    padding: 35px;
+    border-radius: 6px;
+}
+
+/*ENCABEZADO DE PROYECTOS*/
+.encabezado-proyectos {
+    border-left: 6px solid #0F62AC;
+    background-color: #f4f6f8;
+    padding: 28px 32px;
+    margin-bottom: 30px;
+}
+
+.etiqueta-proyectos {
+    color: #0F62AC;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.encabezado-proyectos h2 {
+    color: #0F62AC;
+    font-size: 34px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+}
+
+.encabezado-proyectos p {
+    color: #222222;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 1100px;
+}
+
+/*RESUMEN SUPERIOR*/
+.resumen-proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.resumen-proyecto-item {
+    background-color: #c8dce4;
+    border-top: 4px solid #0F62AC;
+    border-radius: 6px;
+    padding: 22px;
+}
+
+.resumen-proyecto-item h3 {
+    color: #0F62AC;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.resumen-proyecto-item p {
+    color: #222222;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/*LISTADO DE PROYECTOS*/
+.lista-proyectos {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/*TARJETA AMPLIA DE PROYECTO*/
+.proyecto-destacado {
+    background-color: #FEFEFE;
+    border: 1px solid #c8dce4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.08);
+}
+
+/*ENCABEZADO DE CADA TARJETA*/
+.encabezado-tarjeta-proyecto {
+    background-color: #0F62AC;
+    color: #FEFEFE;
+    padding: 22px 26px;
+}
+
+.categoria-proyecto {
+    display: inline-block;
+    background-color: #91D8F7;
+    color: #0F62AC;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.encabezado-tarjeta-proyecto h3 {
+    color: #FEFEFE;
+    font-size: 27px;
+    line-height: 1.25;
+}
+
+/*CONTENIDO INTERNO*/
+.contenido-proyecto {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+    gap: 28px;
+    padding: 26px;
+    align-items: start;
+}
+
+/*DESCRIPCION DEL PROYECTO*/
+.descripcion-proyecto p {
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 14px;
+}
+
+/*DETALLE DEL PROYECTO*/
+.detalle-proyecto {
+    background-color: #f4f6f8;
+    border-left: 5px solid #0F62AC;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.detalle-proyecto h4 {
+    color: #0F62AC;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.detalle-proyecto ul {
+    padding-left: 20px;
+}
+
+.detalle-proyecto li {
+    color: #222222;
+    font-size: 15px;
+    line-height: 1.45;
+    margin-bottom: 8px;
+}
+
+/*IMPACTO DEL PROYECTO*/
+.impacto-proyecto {
+    background-color: #c8dce4;
+    color: #222222;
+    padding: 18px 26px;
+    border-top: 1px solid #b6c9d1;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.impacto-proyecto strong {
+    color: #0F62AC;
+}
+
+/*CIERRE INSTITUCIONAL*/
+.cierre-proyectos {
+    margin-top: 35px;
+    background-color: #f4f6f8;
+    border-left: 6px solid #91D8F7;
+    padding: 28px 32px;
+    border-radius: 6px;
+}
+
+.cierre-proyectos h3 {
+    color: #0F62AC;
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.cierre-proyectos p {
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 1100px;
+}
+
+/*RESPONSIVE DE PROYECTOS*/
+@media (max-width: 768px) {
+
+    .pagina-proyectos {
+        padding: 22px;
+    }
+
+    .encabezado-proyectos {
+        padding: 24px;
+    }
+
+    .encabezado-proyectos h2 {
+        font-size: 27px;
+    }
+
+    .encabezado-proyectos p {
+        font-size: 15px;
+    }
+
+    .resumen-proyectos {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .contenido-proyecto {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 22px;
+    }
+
+    .encabezado-tarjeta-proyecto {
+        padding: 20px 22px;
+    }
+
+    .encabezado-tarjeta-proyecto h3 {
+        font-size: 23px;
+    }
+
+    .descripcion-proyecto p {
+        font-size: 15px;
+    }
+
+    .detalle-proyecto {
+        padding: 18px;
+    }
+
+    .impacto-proyecto {
+        padding: 18px 22px;
+    }
+
+    .cierre-proyectos {
+        padding: 24px;
+    }
+
+    .cierre-proyectos h3 {
+        font-size: 23px;
+    }
+}

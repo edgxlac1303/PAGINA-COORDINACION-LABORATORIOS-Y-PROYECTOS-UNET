@@ -3,13 +3,312 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Proyectos | Coordinación de Laboratorios y Proyectos UNET">
-    <div class="contenedor"> <!-- contenedor general de contenido del main -->
-        <section class="pagina-contenido">
-            <h2>Proyectos</h2>
-            <p>
-                En esta sección se presentarán proyectos académicos, tecnológicos o de investigación
-                vinculados a los espacios de laboratorio.
-            </p>
+
+    <div class="contenedor">
+
+        <section class="pagina-proyectos"> <!-- PAGINA DE PROYECTOS -->
+
+            <div class="encabezado-proyectos"> <!-- ENCABEZADO DE LA PAGINA -->
+                <span class="etiqueta-proyectos">Proyectos y servicios académicos</span>
+
+                <h2>Proyectos Vinculados a Laboratorios, Formación Práctica y Servicios Especializados</h2>
+
+                <p>
+                    La Coordinación de Laboratorios y Proyectos impulsa iniciativas orientadas
+                    a fortalecer la formación práctica, la vinculación institucional, el apoyo
+                    técnico a sectores productivos y la transferencia de conocimiento desde
+                    los laboratorios de la UNET hacia la comunidad.
+                </p>
+            </div>
+
+            <div class="resumen-proyectos"> <!-- RESUMEN DE AREAS -->
+
+                <article class="resumen-proyecto-item">
+                    <h3>Formación Práctica</h3>
+                    <p>
+                        Experiencias académicas que acercan a estudiantes y visitantes a la ciencia
+                        aplicada mediante actividades desarrolladas en laboratorios reales.
+                    </p>
+                </article>
+
+                <article class="resumen-proyecto-item">
+                    <h3>Servicios Técnicos</h3>
+                    <p>
+                        Ensayos, análisis, diagnósticos e informes especializados desarrollados
+                        desde los laboratorios universitarios.
+                    </p>
+                </article>
+
+                <article class="resumen-proyecto-item">
+                    <h3>Vinculación Institucional</h3>
+                    <p>
+                        Proyectos dirigidos a colegios, productores, empresas, instituciones
+                        y sectores estratégicos de la región.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="lista-proyectos"> <!-- LISTADO DE PROYECTOS -->
+
+                <article class="proyecto-destacado"> <!-- PROYECTO RUTA CIENTIFICA -->
+
+                    <div class="encabezado-tarjeta-proyecto">
+                        <span class="categoria-proyecto">Vinculación académica y vocacional</span>
+                        <h3>Ruta Científica UNET</h3>
+                    </div>
+
+                    <div class="contenido-proyecto">
+
+                        <div class="descripcion-proyecto">
+                            <p>
+                                La Ruta Científica UNET es un programa de visita académica orientado
+                                a acercar a estudiantes de bachillerato a la experiencia universitaria.
+                                A través de recorridos guiados por laboratorios experimentales, los
+                                participantes desarrollan prácticas adaptadas a su nivel académico y
+                                conocen de forma directa el valor de la ciencia aplicada dentro de la
+                                universidad.
+                            </p>
+
+                            <p>
+                                El proyecto busca despertar la vocación científica de la generación
+                                de relevo, cerrando la brecha entre la teoría del bachillerato y la
+                                práctica universitaria. Sus estaciones están diseñadas para motivar
+                                el interés por las ingenierías y carreras técnicas.
+                            </p>
+                        </div>
+
+                        <div class="detalle-proyecto">
+                            <h4>¿Qué ofrece?</h4>
+
+                            <ul>
+                                <li>Recorridos guiados por tres laboratorios experimentales.</li>
+                                <li>Estación de Química orientada a reacciones y cambios de la materia.</li>
+                                <li>Estación de Física enfocada en óptica y medición de precisión.</li>
+                                <li>Estación de Electricidad y Electrónica con armado de circuitos simples.</li>
+                                <li>Actividades bajo protocolos de seguridad y bioseguridad.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="impacto-proyecto">
+                        <strong>Impacto:</strong>
+                        Promueve la orientación vocacional, acerca la universidad a los colegios
+                        y muestra la ciencia como una experiencia práctica, segura y alcanzable.
+                    </div>
+
+                </article>
+
+                <article class="proyecto-destacado"> <!-- PROYECTO ENTOMOLOGIA -->
+
+                    <div class="encabezado-tarjeta-proyecto">
+                        <span class="categoria-proyecto">Divulgación científica y educación ambiental</span>
+                        <h3>Descubriendo Insectos en el Museo Entomológico</h3>
+                    </div>
+
+                    <div class="contenido-proyecto">
+
+                        <div class="descripcion-proyecto">
+                            <p>
+                                Este proyecto convierte el Museo Entomológico de la UNET en un
+                                espacio vivencial e interactivo para el aprendizaje de la biología.
+                                Su propósito es superar el aprendizaje limitado a fotos o pantallas,
+                                permitiendo que los visitantes observen, reconozcan y comprendan
+                                el valor de los insectos y artrópodos dentro de los ecosistemas.
+                            </p>
+
+                            <p>
+                                La propuesta busca fomentar la curiosidad científica desde edades
+                                tempranas y promover una visión ambiental respetuosa, mostrando
+                                que los artrópodos no son únicamente plagas, sino organismos
+                                fundamentales para el equilibrio natural.
+                            </p>
+                        </div>
+
+                        <div class="detalle-proyecto">
+                            <h4>¿Qué ofrece?</h4>
+
+                            <ul>
+                                <li>Exploraciones guiadas en turnos controlados.</li>
+                                <li>Aprendizaje sobre clasificación, hábitats y metamorfosis.</li>
+                                <li>Observación científica con lupas y microscopios portátiles.</li>
+                                <li>Interacción segura con colecciones protegidas.</li>
+                                <li>Actividades adaptadas a diferentes niveles educativos.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="impacto-proyecto">
+                        <strong>Impacto:</strong>
+                        Fortalece la educación ambiental, reduce barreras de miedo hacia los
+                        artrópodos y promueve el respeto por la biodiversidad regional.
+                    </div>
+
+                </article>
+
+                <article class="proyecto-destacado"> <!-- PROYECTO MATERIALES -->
+
+                    <div class="encabezado-tarjeta-proyecto">
+                        <span class="categoria-proyecto">Servicios técnicos e industriales</span>
+                        <h3>Servicios de Ingeniería de Materiales</h3>
+                    </div>
+
+                    <div class="contenido-proyecto">
+
+                        <div class="descripcion-proyecto">
+                            <p>
+                                El servicio de Ingeniería de Materiales de la UNET ofrece apoyo
+                                técnico para la caracterización, evaluación y mejora de materiales
+                                metálicos. Su propósito es contribuir a la seguridad operativa de
+                                maquinarias, estructuras y herramientas mediante diagnósticos
+                                confiables y procedimientos de análisis especializados.
+                            </p>
+
+                            <p>
+                                Al integrar la mecánica de materiales con la metalurgia, este servicio
+                                se convierte en un aliado estratégico para empresas públicas, privadas
+                                y talleres metalmecánicos que requieren validar la calidad de sus
+                                materiales, prevenir fallas y optimizar procesos productivos.
+                            </p>
+                        </div>
+
+                        <div class="detalle-proyecto">
+                            <h4>¿Qué ofrece?</h4>
+
+                            <ul>
+                                <li>Ensayos de dureza Rockwell y Brinell.</li>
+                                <li>Análisis metalográfico de muestras metálicas.</li>
+                                <li>Diagnóstico de fallas por grietas, fatiga o corrosión.</li>
+                                <li>Validación de procesos y calidad microestructural.</li>
+                                <li>Tratamientos térmicos como recocido, normalizado y temple.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="impacto-proyecto">
+                        <strong>Impacto:</strong>
+                        Contribuye a mitigar riesgos operativos, optimizar costos de producción
+                        y respaldar científicamente el desarrollo de productos industriales.
+                    </div>
+
+                </article>
+
+                <article class="proyecto-destacado"> <!-- PROYECTO SUELOS -->
+
+                    <div class="encabezado-tarjeta-proyecto">
+                        <span class="categoria-proyecto">Servicios agroproductivos y sostenibilidad</span>
+                        <h3>Valorización de suelos, residuos agrícolas y sustratos</h3>
+                    </div>
+
+                    <div class="contenido-proyecto">
+
+                        <div class="descripcion-proyecto">
+                            <p>
+                                El proyecto de Suelos y Sustratos de la UNET está orientado a apoyar
+                                una producción vegetal más eficiente, rentable y sostenible. Su objetivo
+                                es convertir la sostenibilidad en una práctica técnica aplicable al campo,
+                                ayudando a productores y empresas a transformar residuos agrícolas en
+                                insumos de valor biológico y económico.
+                            </p>
+
+                            <p>
+                                A través de análisis físicos y químicos, el servicio permite conocer
+                                con mayor precisión la calidad de suelos, compost, biochar, abonos
+                                orgánicos y sustratos. De esta manera, el productor puede tomar
+                                decisiones con respaldo técnico y optimizar el uso de sus recursos.
+                            </p>
+                        </div>
+
+                        <div class="detalle-proyecto">
+                            <h4>¿Qué ofrece?</h4>
+
+                            <ul>
+                                <li>Densidad aparente y real.</li>
+                                <li>Porosidad total y determinación de textura.</li>
+                                <li>Determinación de pH y conductividad eléctrica.</li>
+                                <li>Medición de materia orgánica y fósforo.</li>
+                                <li>Informe técnico con interpretación y recomendaciones.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="impacto-proyecto">
+                        <strong>Impacto:</strong>
+                        Ofrece certeza técnica al productor, favorece el aprovechamiento de
+                        residuos agrícolas y fortalece una producción regional más sostenible.
+                    </div>
+
+                </article>
+
+                <article class="proyecto-destacado"> <!-- PROYECTO LECHE -->
+
+                    <div class="encabezado-tarjeta-proyecto">
+                        <span class="categoria-proyecto">Control de calidad agroalimentario</span>
+                        <h3>Análisis físico-químico de leche</h3>
+                    </div>
+
+                    <div class="contenido-proyecto">
+
+                        <div class="descripcion-proyecto">
+                            <p>
+                                El servicio de Análisis de Leche de la UNET brinda respaldo técnico
+                                al productor mediante evaluaciones físico-químicas y microbiológicas
+                                de leche de vaca, búfala, cabra y oveja. Su propósito es certificar la
+                                calidad del producto, sustituir suposiciones por certeza científica y
+                                fortalecer la seguridad alimentaria regional.
+                            </p>
+
+                            <p>
+                                La propuesta permite detectar oportunamente posibles fallas de higiene,
+                                alimentación, refrigeración o salud del rebaño que puedan afectar el
+                                rendimiento y la calidad de la leche. Además, ofrece resultados con
+                                respaldo institucional y procesamiento de muestras en un lapso no mayor
+                                a 36 horas.
+                            </p>
+                        </div>
+
+                        <div class="detalle-proyecto">
+                            <h4>¿Qué ofrece?</h4>
+
+                            <ul>
+                                <li>Acidez titulable para evaluar frescura.</li>
+                                <li>Densidad para verificar pureza de la leche.</li>
+                                <li>Estabilidad proteica mediante prueba de alcohol.</li>
+                                <li>Calidad microbiológica y control higiénico.</li>
+                                <li>Diagnóstico de conformidad según Norma COVENIN 903:2022.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="impacto-proyecto">
+                        <strong>Impacto:</strong>
+                        Apoya la rentabilidad del productor, fortalece el control de calidad
+                        del sector lechero y contribuye a la inocuidad alimentaria.
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="cierre-proyectos"> <!-- CIERRE INSTITUCIONAL -->
+                <h3>Laboratorios al Servicio de la Formación y el Desarrollo Regional</h3>
+
+                <p>
+                    Estos proyectos reflejan el papel de la UNET como institución comprometida
+                    con la excelencia académica, la ciencia aplicada y la vinculación con su entorno.
+                    Desde la formación de futuros estudiantes hasta el apoyo técnico a sectores
+                    productivos, los laboratorios universitarios se consolidan como espacios de
+                    aprendizaje, servicio e innovación.
+                </p>
+            </div>
+
         </section>
+
     </div>
+
 </Layout>
