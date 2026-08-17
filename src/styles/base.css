@@ -53,15 +53,16 @@ main p {
     line-height: 1.6;
 }
 
-
-.contenedor2 { 
-    /* contenedor general de contenido del main */
-    width: calc(100% - 60px); /* todo el ancho -60px */
-    max-width: none;
+/*CONTENEDOR GENERAL*/
+.contenedor {
+    width: 94%;
+    max-width: 1650px;
     margin: 0 auto;
 }
 
+/*SEGUNDO CONTENEDOR SI SE USA EN ALGUNA PAGINA*/
 .contenedor2 {
-    max-width: 1600px; /* contenedor general de contenido del main */
-    margin: auto;
+    width: 94%;
+    max-width: 1650px;
+    margin: 0 auto;
 }
