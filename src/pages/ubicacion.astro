@@ -25,27 +25,8 @@ import Layout from '../layouts/Layout.astro';
                 >
 
                 <datalist id="listaLaboratoriosBloque1">
-                    <option value="Entrada principal del Edificio 11"></option>
-                    <option value="Laboratorio de Química 071"></option>
-                    <option value="Laboratorio de Química Orgánica"></option>
-                    <option value="Laboratorio de Química 072"></option>
-                    <option value="Laboratorio de Química 2"></option>
-                    <option value="Laboratorio de Química Orgánica"></option>
-                    <option value="Laboratorio de Física II"></option>
-                    <option value="Laboratorio de Física I"></option>
-                    <option value="Laboratorio de Física II"></option>
-                    <option value="Laboratorio de Física I"></option>
-                    <option value="Laboratorio de Máquinas y Herramientas"></option>
-                    <option value="Laboratorio de Conformados"></option>
-                    <option value="Laboratorio de TurboMáquinas y Planta de Poténncia"></option>
-                    <option value="Laboratorio de Pavimentos"></option>
-                    <option value="Laboratorio de TermoFluídos y Planta de Poténcia"></option>
-                    <option value="Laboratorio de Fisiología y Sanidad Animal"></option>
-                    <option value="Laboratorio de Anatomía"></option>
-                    <option value="Laboratorio de Suelos"></option>
-                    <option value="Laboratorio de Ingeniería Ambiental"></option>
-                    <option value="Laboratorio de Componentes Constructivos "></option>
-                    <option value="Laboratorio de Ingeniería Ambiental"></option>
+                    <option value="Laboratorio de física"></option>
+                    <option value="Laboratorio de Química Analítica"></option>,
                 </datalist>
 
                 <button id="botonBuscarLaboratorioBloque1">
@@ -75,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
                 <input 
                     type="text" 
                     id="buscarLaboratorioBloque2" 
-                    placeholder="Busca tu Laboratorio"
+                    placeholder="Buscar laboratorio en el recorrido"
                     list="listaLaboratoriosBloque2"
                 >
 
@@ -117,7 +98,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
     scenes: {
 
         entradaEdificio11: {
-            title: 'Entrada - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/inicio.jpg',
             pitch: -3.9,
@@ -143,7 +123,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         pasillo2A: {
-            title: 'Pasillo - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/pasillo2A.jpg',
             pitch: 0,
@@ -169,7 +148,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         pasillocafetin: {
-            title: 'Cafetín - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/pasillocafetin.jpg',
             pitch: 1,
@@ -195,7 +173,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         pasillomuroA: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/pasillomuroA.jpg',
             pitch: -2,
@@ -221,7 +198,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         entradaceti: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/entradaceti.jpg',
             pitch: 0,
@@ -254,7 +230,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         pasilloceti1: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/pasilloceti1.jpg',
             pitch: 0,
@@ -287,7 +262,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs1pasillo1ceti: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/labs1pasillo1ceti.jpg',
             pitch: 0,
@@ -319,7 +293,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs2pasillo1ceti: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/labs2pasillo1ceti.jpg',
             pitch: -2,
@@ -357,7 +330,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         }, 
 
         labs3pasillo1ceti: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/labs3pasillo1ceti.jpg',
             pitch: -1,
@@ -388,7 +360,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         pasilloceti2: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/pasilloceti2.jpg',
             pitch: 0,
@@ -414,7 +385,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         }, 
 
         labs1pasillo2ceti: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/labs1pasillo2ceti.jpg',
             pitch: -5,
@@ -452,7 +422,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs2pasillo2ceti: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/labs2pasillo2ceti.jpg',
             pitch: -1,
@@ -483,7 +452,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         pasilloceti3: {
-            title: 'Laboratorio - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/A-CETI/pasilloceti3.jpg',
             pitch: -6,
@@ -509,7 +477,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         calle1: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/calle1.jpg',
             pitch: -1,
@@ -542,7 +509,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         calle2: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/calle2.jpg',
             pitch: 0,
@@ -568,7 +534,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs1calle2: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/labs1calle2.jpg',
             pitch: 0,
@@ -606,7 +571,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs2calle2: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/labs2calle2.jpg',
             pitch: 0,
@@ -644,7 +608,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         calle3: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/calle3.jpg',
             pitch: 0,
@@ -677,7 +640,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs1calle3: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/labs1calle3.jpg',
             pitch: 0,
@@ -709,7 +671,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs2calle3: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/labs2calle3.jpg',
             pitch: 0,
@@ -741,7 +702,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs3calle3: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/labs3calle3.jpg',
             pitch: 0,
@@ -767,7 +727,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs3calle4: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/labs3calle4.jpg',
             pitch: 0,
@@ -799,7 +758,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs2calle4: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/labs2calle4.jpg',
             pitch: 0,
@@ -831,7 +789,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         labs1calle4: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/labs1calle4.jpg',
             pitch: 0,
@@ -869,7 +826,6 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
         },
 
         calle4: {
-            title: 'Calle - Edificio 11',
             type: 'equirectangular',
             panorama: '/assets/recorridos360/CALLE-A/calle4.jpg',
             pitch: 0,
@@ -900,153 +856,21 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
 /*LISTA DE LABORATORIOS BUSCABLES DEL BLOQUE 1*/
 const laboratoriosBloque1 = [
     {
-        nombre: 'Entrada principal del Edificio 11',
-        escena: 'entradaEdificio11',
-        pitch: -3.6,
-        yaw: -77.4,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Química 071',
+        nombre: 'Laboratorio de Física',
         escena: 'labs1pasillo1ceti',
         pitch: 26.17,
         yaw: 29.14,
-        hfov: 80
+        hfov: 100
     },
     {
-        nombre: 'Laboratorio de Química Orgánica',
-        escena: 'labs2pasillo1ceti',
-        pitch: 12.36,
-        yaw: -42.24,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Química 072',
-        escena: 'labs2pasillo1ceti',
-        pitch: 4.79,
-        yaw: 165.79,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Química 2',
-        escena: 'labs3pasillo1ceti',
-        pitch: 8,
-        yaw: 132.88,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Química Orgánica',
-        escena: 'labs3pasillo1ceti',
-        pitch: 2.10,
-        yaw: -7.44,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Física II',
-        escena: 'labs1pasillo2ceti',
-        pitch: 7.58,
-        yaw: -25.02,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Física I',
-        escena: 'labs1pasillo2ceti',
-        pitch: 2.46,
-        yaw: 156.51,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Física II',
-        escena: 'labs2pasillo2ceti',
-        pitch: 5.28,
-        yaw: 12.34,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Física I',
-        escena: 'labs2pasillo2ceti',
-        pitch: 6.92,
-        yaw: 127.70,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Máquinas y Herramientas',
-        escena: 'labs1calle2',
-        pitch: 8.51,
-        yaw: -86.47,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Conformados',
-        escena: 'labs1calle2',
-        pitch: 6.57,
-        yaw: 85.16,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de TurboMáquinas y Planta de Poténncia',
-        escena: 'labs2calle2',
-        pitch: 11,
-        yaw: 61,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Pavimentos',
-        escena: 'labs2calle2',
-        pitch: 6.3,
-        yaw: 140,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de TermoFluídos y Planta de Poténcia',
-        escena: 'labs2calle2',
-        pitch: 9.47,
-        yaw: -103.19,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Fisiología y Sanidad Animal',
-        escena: 'labs1calle3',
-        pitch: 6.10,
-        yaw: 24.46,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Anatomía',
+        nombre: 'Laboratorio de Química Analítica',
         escena: 'labs2calle3',
         pitch: 7.33,
         yaw: 110.44,
-        hfov: 80
+        hfov: 100
     },
-    {
-        nombre: 'Laboratorio de Suelos',
-        escena: 'labs3calle4',
-        pitch: 3.53,
-        yaw: -147.42,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Ingeniería Ambiental',
-        escena: 'labs2calle4',
-        pitch: 7.07,
-        yaw: 12.93,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Componentes Constructivos ',
-        escena: 'labs1calle4',
-        pitch: 6.06,
-        yaw: 64.81,
-        hfov: 80
-    },
-    {
-        nombre: 'Laboratorio de Ingeniería Ambiental',
-        escena: 'labs1calle4',
-        pitch: 3.64,
-        yaw: -127.21,
-        hfov: 80
-    }
 ];
+
 /*ELEMENTOS DEL BUSCADOR DEL RECORRIDO 360*/
 const inputBuscarBloque1 = document.getElementById('buscarLaboratorioBloque1');
 const botonBuscarBloque1 = document.getElementById('botonBuscarLaboratorioBloque1');
@@ -1123,7 +947,6 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
         hall: {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/hall.jpg',
-            title: 'Entrada del Edificio 12',
             author: 'Coordinación de Laboratorios y Proyectos UNET',
             pitch: 0,
             yaw: 0,
@@ -2046,8 +1869,8 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-2/c2pasillo4piso2.jpg',
             pitch: -0.53,
-            yaw: 109.55,
-            hfov: 120,
+            yaw: -90.28,
+            hfov: 100,
 
             hotSpots: [
                 {
@@ -2099,7 +1922,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
                     yaw: -92.26,
                     type: 'scene',
                     text: 'Subir',
-                    sceneId: 'c2piso2',
+                    sceneId: 'hall',
                 },
                 {
                     pitch: 5,
