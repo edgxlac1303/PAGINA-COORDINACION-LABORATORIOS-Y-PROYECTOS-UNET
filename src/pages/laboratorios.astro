@@ -2,66 +2,238 @@
 import Layout from '../layouts/Layout.astro';
 import TarjetaLaboratorio from '../components/TarjetaLaboratorio.astro';
 import { laboratorios } from '../data/laboratorios.js';
-
-const laboratoriosPagina1 = laboratorios.slice(0, 32);
 ---
 
 <Layout title="Laboratorios | Coordinación de Laboratorios y Proyectos UNET">
 
     <div class="contenedor">
 
-        <section class="pagina-laboratorios">
+        <section class="pagina-laboratorios"> <!-- PAGINA DE LABORATORIOS -->
 
-            <div class="encabezado-pagina">
+            <div class="encabezado-pagina"> <!-- ENCABEZADO DE LA PAGINA -->
                 <h2>Laboratorios</h2>
+
                 <p>
                     En esta sección se presenta el listado de laboratorios registrados,
                     indicando su ubicación, aula asignada y departamento correspondiente.
                 </p>
             </div>
 
-            <div class="buscador-laboratorios">
-                <input type="text" placeholder="Buscar laboratorio, aula o departamento">
+            <div class="buscador-laboratorios"> <!-- BUSCADOR DE LABORATORIOS -->
+                <input 
+                    type="text" 
+                    id="buscadorLaboratorios"
+                    placeholder="Buscar laboratorio, aula o departamento"
+                >
             </div>
 
-            <div class="filtros-laboratorios">
-                <button>Todos</button>
-                <button>Informática</button>
-                <button>Electrónica</button>
-                <button>Mecánica</button>
-                <button>Arquitectura</button>
-                <button> Química</button>
-                <button> Matemática y Física</button>
-                <button> Civil</button>
-                <button> Producción Animal</button>
-                <button> Agronómica</button>
+            <div class="filtros-laboratorios"> <!-- FILTROS DE DEPARTAMENTOS -->
+                <button type="button" class="btn-filtro-laboratorio activo" data-filtro="todos">Todos</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="informatica">Informática</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="electronica">Electrónica</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="mecanica">Mecánica</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="arquitectura">Arquitectura</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="quimica">Química</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="matematica y fisica">Matemática y Física</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="civil">Civil</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="produccion animal">Producción Animal</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="agronomica">Agronómica</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="industrial">Industrial</button>
+                <button type="button" class="btn-filtro-laboratorio" data-filtro="agroindustrial">Agroindustrial</button>
             </div>
 
             <div class="contador-laboratorios">
-                <p>Mostrando laboratorios 1 al 32 de {laboratorios.length}</p>
+                <p id="contadorLaboratorios">
+                    Mostrando laboratorios 1 al 32 de {laboratorios.length}
+                </p>
             </div>
 
-            <div class="grid-laboratorios">
+            <p id="mensajeSinResultados" class="mensaje-sin-resultados oculto">
+                No se encontraron laboratorios con ese criterio de búsqueda.
+            </p>
+
+            <div class="grid-laboratorios"> <!-- CONTENEDOR DE TARJETAS -->
                 {
-                    laboratoriosPagina1.map((laboratorio) => (
-                        <TarjetaLaboratorio
-                            nombre={laboratorio.nombre}
-                            departamento={laboratorio.departamento}
-                            ubicacion={laboratorio.ubicacion}
-                            aula={laboratorio.aula}
-                        />
+                    laboratorios.map((laboratorio) => (
+                        <div 
+                            class="item-laboratorio"
+                            data-departamento={laboratorio.departamento}
+                            data-busqueda={`${laboratorio.nombre} ${laboratorio.departamento} ${laboratorio.ubicacion} ${laboratorio.aula}`}
+                        >
+                            <TarjetaLaboratorio
+                                nombre={laboratorio.nombre}
+                                departamento={laboratorio.departamento}
+                                ubicacion={laboratorio.ubicacion}
+                                aula={laboratorio.aula}
+                            />
+                        </div>
                     ))
                 }
             </div>
 
-            <div class="paginacion-laboratorios">
-                <span class="pagina-activa">1</span>
-                <a href="/laboratorios-2">2</a>
-                <a href="/laboratorios-2" class="boton-paginacion">Página siguiente</a>
+            <div class="paginacion-laboratorios"> <!-- PAGINACION -->
+                <button type="button" id="btnPaginaAnterior" class="boton-paginacion">
+                    Página anterior
+                </button>
+
+                <div id="numerosPaginacion" class="numeros-paginacion"></div>
+
+                <button type="button" id="btnPaginaSiguiente" class="boton-paginacion">
+                    Página siguiente
+                </button>
             </div>
 
         </section>
 
     </div>
+
+    <script is:inline>
+        // BUSCADOR, FILTROS Y PAGINACION DE LABORATORIOS
+
+        const buscadorLaboratorios = document.getElementById("buscadorLaboratorios");
+        const botonesFiltro = document.querySelectorAll(".btn-filtro-laboratorio");
+        const itemsLaboratorios = Array.from(document.querySelectorAll(".item-laboratorio"));
+        const mensajeSinResultados = document.getElementById("mensajeSinResultados");
+        const contadorLaboratorios = document.getElementById("contadorLaboratorios");
+        const btnPaginaAnterior = document.getElementById("btnPaginaAnterior");
+        const btnPaginaSiguiente = document.getElementById("btnPaginaSiguiente");
+        const numerosPaginacion = document.getElementById("numerosPaginacion");
+
+        const laboratoriosPorPagina = 32;
+
+        let paginaActual = 1;
+        let filtroActual = "todos";
+
+        function normalizarTexto(texto) {
+            return texto
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function obtenerLaboratoriosFiltrados() {
+            const textoBuscado = normalizarTexto(buscadorLaboratorios.value);
+
+            return itemsLaboratorios.filter(function (item) {
+                const contenido = normalizarTexto(item.dataset.busqueda);
+                const departamento = normalizarTexto(item.dataset.departamento);
+
+                const coincideBusqueda = contenido.includes(textoBuscado);
+
+                const coincideFiltro = 
+                    filtroActual === "todos" || departamento.includes(filtroActual);
+
+                return coincideBusqueda && coincideFiltro;
+            });
+        }
+
+        function crearBotonesPaginacion(totalPaginas) {
+            numerosPaginacion.innerHTML = "";
+
+            for (let i = 1; i <= totalPaginas; i++) {
+                const botonPagina = document.createElement("button");
+
+                botonPagina.type = "button";
+                botonPagina.textContent = i;
+                botonPagina.classList.add("btn-numero-pagina");
+
+                if (i === paginaActual) {
+                    botonPagina.classList.add("pagina-activa");
+                }
+
+                botonPagina.addEventListener("click", function () {
+                    paginaActual = i;
+                    actualizarVistaLaboratorios();
+                });
+
+                numerosPaginacion.appendChild(botonPagina);
+            }
+        }
+
+        function actualizarVistaLaboratorios() {
+            const laboratoriosFiltrados = obtenerLaboratoriosFiltrados();
+            const totalResultados = laboratoriosFiltrados.length;
+            const totalPaginas = Math.ceil(totalResultados / laboratoriosPorPagina);
+
+            itemsLaboratorios.forEach(function (item) {
+                item.classList.add("oculto");
+            });
+
+            if (totalResultados === 0) {
+                mensajeSinResultados.classList.remove("oculto");
+                contadorLaboratorios.textContent = "No hay laboratorios para mostrar.";
+                btnPaginaAnterior.disabled = true;
+                btnPaginaSiguiente.disabled = true;
+                numerosPaginacion.innerHTML = "";
+                return;
+            }
+
+            mensajeSinResultados.classList.add("oculto");
+
+            if (paginaActual > totalPaginas) {
+                paginaActual = 1;
+            }
+
+            const inicio = (paginaActual - 1) * laboratoriosPorPagina;
+            const fin = inicio + laboratoriosPorPagina;
+
+            const laboratoriosPaginaActual = laboratoriosFiltrados.slice(inicio, fin);
+
+            laboratoriosPaginaActual.forEach(function (item) {
+                item.classList.remove("oculto");
+            });
+
+            const primerResultado = inicio + 1;
+            const ultimoResultado = Math.min(fin, totalResultados);
+
+            contadorLaboratorios.textContent = 
+                "Mostrando laboratorios " + primerResultado + 
+                " al " + ultimoResultado + 
+                " de " + totalResultados + " resultado(s).";
+
+            btnPaginaAnterior.disabled = paginaActual === 1;
+            btnPaginaSiguiente.disabled = paginaActual === totalPaginas;
+
+            crearBotonesPaginacion(totalPaginas);
+        }
+
+        buscadorLaboratorios.addEventListener("input", function () {
+            paginaActual = 1;
+            actualizarVistaLaboratorios();
+        });
+
+        botonesFiltro.forEach(function (boton) {
+            boton.addEventListener("click", function () {
+                botonesFiltro.forEach(function (botonFiltro) {
+                    botonFiltro.classList.remove("activo");
+                });
+
+                boton.classList.add("activo");
+
+                filtroActual = normalizarTexto(boton.dataset.filtro);
+                paginaActual = 1;
+
+                actualizarVistaLaboratorios();
+            });
+        });
+
+        btnPaginaAnterior.addEventListener("click", function () {
+            if (paginaActual > 1) {
+                paginaActual--;
+                actualizarVistaLaboratorios();
+            }
+        });
+
+        btnPaginaSiguiente.addEventListener("click", function () {
+            const totalPaginas = Math.ceil(obtenerLaboratoriosFiltrados().length / laboratoriosPorPagina);
+
+            if (paginaActual < totalPaginas) {
+                paginaActual++;
+                actualizarVistaLaboratorios();
+            }
+        });
+
+        actualizarVistaLaboratorios();
+    </script>
 
 </Layout>

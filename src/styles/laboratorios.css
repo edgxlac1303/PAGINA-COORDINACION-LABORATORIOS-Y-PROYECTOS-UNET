@@ -58,26 +58,67 @@
     cursor: pointer;
 }
 
-.filtros-laboratorios button:hover {
+.filtros-laboratorios button:hover,
+.filtros-laboratorios button.activo {
     background-color: #0F62AC;
     color: #FEFEFE;
+}
+
+/*CONTADOR DE LABORATORIOS*/
+.contador-laboratorios {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contador-laboratorios p {
+    color: #222222;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*MENSAJE CUANDO NO HAY RESULTADOS*/
+.mensaje-sin-resultados {
+    text-align: center;
+    color: #0F62AC;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 25px 0px;
 }
 
 /*CONTENEDOR DE TARJETAS DE LABORATORIOS*/
 .grid-laboratorios {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    align-items: stretch;
     gap: 30px;
+}
+
+/*ITEM INDIVIDUAL DEL GRID*/
+.item-laboratorio {
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 /*TARJETA DE LABORATORIO*/
 .tarjeta-laboratorio {
     width: 100%;
+    min-height: 365px;
     background-color: #FEFEFE;
     border: 1px solid #c8dce4;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+}
+
+/*EFECTO DE TARJETA*/
+.tarjeta-laboratorio:hover {
+    transform: translateY(-3px);
 }
 
 /* EVITA QUE LOS TEXTOS SE SALGAN DE LAS TARJETAS */
@@ -101,29 +142,42 @@
     background-color: #c8dce4;
     padding: 16px;
     border-top: 4px solid #0F62AC;
+    min-height: 110px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .encabezado-laboratorio h3 {
     color: #0F62AC;
     font-size: 32px;
-    margin-bottom: 4px;
+    line-height: 1.1;
+    margin-bottom: 6px;
 }
 
 .encabezado-laboratorio p {
     color: #0F62AC;
     font-size: 15px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 /*CONTENIDO DE LA TARJETA*/
 .contenido-laboratorio {
     padding: 18px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .contenido-laboratorio h4 {
     color: #222222;
     font-size: 18px;
+    line-height: 1.25;
     margin-bottom: 12px;
+    min-height: 68px;
 }
 
 .contenido-laboratorio p {
@@ -136,13 +190,14 @@
 .acciones-laboratorio {
     display: flex;
     gap: 10px;
-    margin-top: 16px;
+    margin-top: auto;
+    padding-top: 16px;
 }
 
 .acciones-laboratorio a {
     flex: 1;
     text-align: center;
-    padding: 8px 10px;
+    padding: 9px 10px;
     border: 1px solid #0F62AC;
     border-radius: 4px;
     color: #0F62AC;
@@ -151,27 +206,18 @@
     font-size: 14px;
 }
 
+.acciones-laboratorio a:hover {
+    background-color: #0F62AC;
+    color: #FEFEFE;
+}
+
 .acciones-laboratorio .boton-ubicacion {
     background-color: #0F62AC;
     color: #FEFEFE;
 }
 
-/*EFECTO DE TARJETA*/
-.tarjeta-laboratorio:hover {
-    transform: translateY(-3px);
-    transition: 0.2s;
-}
-
-/*CONTADOR DE LABORATORIOS*/
-.contador-laboratorios {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.contador-laboratorios p {
-    color: #222222;
-    font-size: 15px;
-    font-weight: bold;
+.acciones-laboratorio .boton-ubicacion:hover {
+    background-color: #094a82;
 }
 
 /*PAGINACION DE LABORATORIOS*/
@@ -184,6 +230,15 @@
     flex-wrap: wrap;
 }
 
+.numeros-paginacion {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*BOTONES Y ENLACES DE PAGINACION*/
+.paginacion-laboratorios button,
 .paginacion-laboratorios a,
 .paginacion-laboratorios span {
     min-width: 42px;
@@ -195,11 +250,23 @@
     color: #0F62AC;
     font-weight: bold;
     background-color: #FEFEFE;
+    cursor: pointer;
 }
 
+.paginacion-laboratorios button:hover,
 .paginacion-laboratorios a:hover {
     background-color: #0F62AC;
     color: #FEFEFE;
+}
+
+.paginacion-laboratorios button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.paginacion-laboratorios button:disabled:hover {
+    background-color: #FEFEFE;
+    color: #0F62AC;
 }
 
 .paginacion-laboratorios .pagina-activa {

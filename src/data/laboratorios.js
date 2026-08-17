@@ -246,7 +246,7 @@ export const laboratorios = [
     },
     {
         item: null,
-        nombre: "SIMULACIÓN",
+        nombre: "SIMULACIÓN                                                                           ",
         departamento: "INGENIERÍA INDUSTRIAL",
         ubicacion: "EDIFICIO B",
         aula: "9 B"
