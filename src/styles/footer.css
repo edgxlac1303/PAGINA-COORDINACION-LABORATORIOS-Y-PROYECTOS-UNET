@@ -73,13 +73,13 @@ footer p {
     font-size: 17px;
 }
 
-/* NUEVO CONTENEDOR FLEXBOX */
+
 .contenedor-logos {
-    display: flex;       /* Pone las imágenes una al lado de la otra */
-    justify-content: center; /* 👈 ESTA LÍNEA centra el grupo de logos horizontalmente */
-    align-items: center; /* Las alinea verticalmente al centro */
-    gap: 10px;           /* Controla la separación entre los dos logos */
-    margin-top: 15px;    /* Separa los logos del texto de arriba */
+    display: flex;       
+    justify-content: center;
+    align-items: center; 
+    gap: 10px;           
+    margin-top: 15px;    
 }
 
 /* LOGO UNET */
@@ -92,5 +92,4 @@ footer p {
 .logo-footer-decanato {
     width: 65px;
     height: auto;
-    /* ❌ Eliminamos position: absolute y margin-top para que no se descoloque */
 }
