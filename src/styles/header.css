@@ -16,24 +16,41 @@ header {
     gap: 18px;
 }
 
+/*ENLACE DEL LOGO UNET*/
+.barra-superior a {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 .barra-superior p {
     font-size: 28px;
     font-weight: bold;
+    flex: 1;
 }
 
 .logo-unet {
     width: 90px;
+    max-width: 90px;
     height: auto;
+    display: block;
 }
 
 /* LOGO DEL DECANATO EN LA PARTE DERECHA */
-.logo-decanato-header {
-    width: 80px;
-    height: auto;
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    left: auto;
+.barra-superior .logo-decanato-header {
+    width: 80px !important;
+    max-width: 80px !important;
+    height: auto !important;
+    max-height: 75px !important;
+    display: block !important;
+    object-fit: contain !important;
+    flex-shrink: 0;
+
+    position: static !important;
+    right: auto !important;
+    top: auto !important;
+    left: auto !important;
+    margin-left: auto !important;
 }
 
 /*MENU DE NAVEGACION*/

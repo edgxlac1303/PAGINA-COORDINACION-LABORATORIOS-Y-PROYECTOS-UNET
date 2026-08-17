@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { laboratorios } from '../data/laboratorios.js';
+
+const proyectos = [
+    {
+        titulo: "Ruta Científica UNET",
+        categoria: "Vinculación académica y vocacional",
+        descripcion: "Programa de visita académica que acerca a estudiantes de bachillerato a la experiencia universitaria mediante prácticas reales en laboratorios de Química, Física, Electricidad y Electrónica.",
+        enlace: "/proyectos"
+    },
+    {
+        titulo: "Descubriendo Insectos en el Museo Entomológico",
+        categoria: "Divulgación científica y educación ambiental",
+        descripcion: "Experiencia educativa e interactiva para conocer el mundo de los insectos y artrópodos mediante observación científica, colecciones protegidas y actividades guiadas.",
+        enlace: "/proyectos"
+    },
+    {
+        titulo: "Servicios de Ingeniería de Materiales",
+        categoria: "Servicios técnicos e industriales",
+        descripcion: "Servicio orientado a la caracterización, análisis microestructural, ensayos de dureza y tratamientos térmicos para materiales metálicos.",
+        enlace: "/proyectos"
+    },
+    {
+        titulo: "Suelos y Sustratos",
+        categoria: "Servicios agroproductivos y sostenibilidad",
+        descripcion: "Análisis físico y químico de suelos, abonos, residuos agrícolas y sustratos para apoyar una producción vegetal más rentable y sostenible.",
+        enlace: "/proyectos"
+    },
+    {
+        titulo: "Análisis físico-químico de leche",
+        categoria: "Control de calidad agroalimentario",
+        descripcion: "Servicio de análisis físico-químico y microbiológico de leche de vaca, búfala, cabra y oveja, orientado a certificar la calidad del producto.",
+        enlace: "/proyectos"
+    }
+];
+
+const secciones = [
+    {
+        titulo: "Laboratorios",
+        descripcion: "Listado de laboratorios registrados, con ubicación, aula asignada y departamento correspondiente.",
+        enlace: "/laboratorios"
+    },
+    {
+        titulo: "Proyectos",
+        descripcion: "Proyectos académicos, servicios técnicos, vinculación institucional y transferencia de conocimiento.",
+        enlace: "/proyectos"
+    },
+    {
+        titulo: "Mantenimiento",
+        descripcion: "Registro de solicitudes de revisión, reparación o mantenimiento de los espacios de laboratorio.",
+        enlace: "/mantenimiento"
+    },
+    {
+        titulo: "Ubicación 360°",
+        descripcion: "Recorridos virtuales por edificios y espacios académicos de la universidad.",
+        enlace: "/ubicacion"
+    }
+];
+---
+
+<Layout title="Búsqueda | Coordinación de Laboratorios y Proyectos UNET">
+
+    <div class="contenedor">
+
+        <section class="pagina-busqueda"> <!-- PAGINA DE BUSQUEDA -->
+
+            <div class="encabezado-busqueda"> <!-- ENCABEZADO DE BUSQUEDA -->
+                <h2>Resultados de búsqueda</h2>
+
+                <p>
+                    Consulta coincidencias relacionadas con laboratorios, proyectos y secciones
+                    principales del portal.
+                </p>
+            </div>
+
+            <div class="busqueda-interna"> <!-- BUSCADOR INTERNO -->
+                <input 
+                    type="text" 
+                    id="campoBusquedaInterna" 
+                    placeholder="Buscar laboratorio, proyecto o sección"
+                >
+
+                <button type="button" id="botonBusquedaInterna">Buscar</button>
+            </div>
+
+            <p id="textoConsulta" class="texto-consulta"></p>
+
+            <div id="contenedorResultados" class="contenedor-resultados-busqueda"></div>
+
+            <p id="mensajeSinResultadosBusqueda" class="mensaje-sin-resultados oculto">
+                No se encontraron resultados relacionados con la búsqueda.
+            </p>
+
+        </section>
+
+    </div>
+
+    <script define:vars={{ laboratorios, proyectos, secciones }}>
+        // BUSQUEDA GENERAL DEL PORTAL
+
+        const campoBusquedaInterna = document.getElementById("campoBusquedaInterna");
+        const botonBusquedaInterna = document.getElementById("botonBusquedaInterna");
+        const textoConsulta = document.getElementById("textoConsulta");
+        const contenedorResultados = document.getElementById("contenedorResultados");
+        const mensajeSinResultadosBusqueda = document.getElementById("mensajeSinResultadosBusqueda");
+
+        function normalizarTexto(texto) {
+            return texto
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function obtenerParametroBusqueda() {
+            const parametros = new URLSearchParams(window.location.search);
+            return parametros.get("consulta") || "";
+        }
+
+        function crearTarjetaResultado(tipo, titulo, descripcion, enlace, detalle = "") {
+            const tarjeta = document.createElement("article");
+            tarjeta.classList.add("tarjeta-resultado-busqueda");
+
+            tarjeta.innerHTML = `
+                <span>${tipo}</span>
+                <h3>${titulo}</h3>
+                <p>${descripcion}</p>
+                ${detalle ? `<p class="detalle-resultado">${detalle}</p>` : ""}
+                <a href="${enlace}">Ver información</a>
+            `;
+
+            contenedorResultados.appendChild(tarjeta);
+        }
+
+        function ejecutarBusqueda(consulta) {
+            const consultaNormalizada = normalizarTexto(consulta);
+
+            contenedorResultados.innerHTML = "";
+
+            if (consulta.trim() === "") {
+                textoConsulta.textContent = "Ingrese un término para realizar la búsqueda.";
+                mensajeSinResultadosBusqueda.classList.add("oculto");
+                return;
+            }
+
+            textoConsulta.textContent = `Resultados para: "${consulta}"`;
+
+            const resultadosLaboratorios = laboratorios.filter(function (laboratorio) {
+                const textoLaboratorio = normalizarTexto(
+                    laboratorio.nombre + " " +
+                    laboratorio.departamento + " " +
+                    laboratorio.ubicacion + " " +
+                    laboratorio.aula
+                );
+
+                return textoLaboratorio.includes(consultaNormalizada);
+            });
+
+            const resultadosProyectos = proyectos.filter(function (proyecto) {
+                const textoProyecto = normalizarTexto(
+                    proyecto.titulo + " " +
+                    proyecto.categoria + " " +
+                    proyecto.descripcion
+                );
+
+                return textoProyecto.includes(consultaNormalizada);
+            });
+
+            const resultadosSecciones = secciones.filter(function (seccion) {
+                const textoSeccion = normalizarTexto(
+                    seccion.titulo + " " + seccion.descripcion
+                );
+
+                return textoSeccion.includes(consultaNormalizada);
+            });
+
+            resultadosLaboratorios.forEach(function (laboratorio) {
+                crearTarjetaResultado(
+                    "Laboratorio",
+                    laboratorio.nombre,
+                    `Departamento: ${laboratorio.departamento}`,
+                    "/laboratorios",
+                    `Ubicación: ${laboratorio.ubicacion} | Aula: ${laboratorio.aula}`
+                );
+            });
+
+            resultadosProyectos.forEach(function (proyecto) {
+                crearTarjetaResultado(
+                    "Proyecto",
+                    proyecto.titulo,
+                    proyecto.descripcion,
+                    proyecto.enlace,
+                    proyecto.categoria
+                );
+            });
+
+            resultadosSecciones.forEach(function (seccion) {
+                crearTarjetaResultado(
+                    "Sección",
+                    seccion.titulo,
+                    seccion.descripcion,
+                    seccion.enlace
+                );
+            });
+
+            const totalResultados = 
+                resultadosLaboratorios.length + 
+                resultadosProyectos.length + 
+                resultadosSecciones.length;
+
+            if (totalResultados === 0) {
+                mensajeSinResultadosBusqueda.classList.remove("oculto");
+            } else {
+                mensajeSinResultadosBusqueda.classList.add("oculto");
+            }
+        }
+
+        function buscarDesdeCampoInterno() {
+            const nuevaConsulta = campoBusquedaInterna.value.trim();
+
+            if (nuevaConsulta === "") {
+                return;
+            }
+
+            window.location.href = "/busqueda?consulta=" + encodeURIComponent(nuevaConsulta);
+        }
+
+        botonBusquedaInterna.addEventListener("click", function () {
+            buscarDesdeCampoInterno();
+        });
+
+        campoBusquedaInterna.addEventListener("keydown", function (evento) {
+            if (evento.key === "Enter") {
+                buscarDesdeCampoInterno();
+            }
+        });
+
+        const consultaInicial = obtenerParametroBusqueda();
+
+        campoBusquedaInterna.value = consultaInicial;
+        ejecutarBusqueda(consultaInicial);
+    </script>
+
+</Layout>

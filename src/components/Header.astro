@@ -12,8 +12,15 @@ const {
         <a href="https://www.unet.edu.ve/" target="_blank" rel="noopener noreferrer">
             <img src="/assets/img/logo-unet-blanco.png" alt="Imagotipo UNET" class="logo-unet">
         </a>
+
         <p>Universidad Nacional Experimental del Táchira</p>
-        <img src="/assets/img/logo_decanato_blanco.png" alt="Imagotipo DECANATO" class="logo-decanato-header">
+
+        <img 
+    src="/assets/img/logo_decanato_blanco.png" 
+    alt="Imagotipo DECANATO" 
+    class="logo-decanato-header"
+    style="width: 80px; max-width: 80px; height: auto; max-height: 75px; object-fit: contain;"
+>
     </div>
 
     <nav class={mostrarNavegacion ? "" : "oculto"}>
@@ -23,7 +30,6 @@ const {
             <li><a href="/proyectos">Proyectos</a></li>
             <li><a href="/ubicacion">Ubicación</a></li>
             <li><a href="/mantenimiento">Mantenimiento</a></li>
-            
         </ul>
     </nav>
 
@@ -39,10 +45,50 @@ const {
         </div>
 
         <div class={mostrarBuscadorHeader ? "buscador-header" : "buscador-header oculto"}>
-            <input type="text" placeholder="Buscar laboratorio o proyecto">
-            <button>Buscar</button>
+
+            <input 
+                type="text" 
+                id="buscadorPortal" 
+                placeholder="Buscar laboratorio o proyecto"
+            >
+
+            <button type="button" id="botonBuscarPortal">Buscar</button>
+
         </div>
 
     </div>
 
 </header>
+
+<script is:inline>
+    // BUSCADOR GENERAL DEL PORTAL
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const buscadorPortal = document.getElementById("buscadorPortal");
+        const botonBuscarPortal = document.getElementById("botonBuscarPortal");
+
+        if (!buscadorPortal || !botonBuscarPortal) {
+            return;
+        }
+
+        function buscarEnPortal() {
+            const textoBusqueda = buscadorPortal.value.trim();
+
+            if (textoBusqueda === "") {
+                return;
+            }
+
+            window.location.href = "/busqueda?consulta=" + encodeURIComponent(textoBusqueda);
+        }
+
+        botonBuscarPortal.addEventListener("click", function () {
+            buscarEnPortal();
+        });
+
+        buscadorPortal.addEventListener("keydown", function (evento) {
+            if (evento.key === "Enter") {
+                buscarEnPortal();
+            }
+        });
+    });
+</script>
