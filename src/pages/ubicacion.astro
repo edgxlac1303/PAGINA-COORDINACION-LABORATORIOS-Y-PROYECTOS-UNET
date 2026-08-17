@@ -973,23 +973,30 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             author: 'Coordinación de Laboratorios y Proyectos UNET',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: -0.69,
+                    yaw: -28.02,
                     type: 'scene',
                     text: 'Avanzar al Valerio Wong',
                     sceneId: 'entradavalerio',
                 },
                 {
-                    pitch: 0,
-                    yaw: 20,
+                    pitch: -4.28,
+                    yaw: 123,
+                    type: 'scene',
+                    text: 'bajar',
+                    sceneId: 'c2pasillo1piso1',
+                },
+                {
+                    pitch: -1.10,
+                    yaw: -140.44,
                     type: 'scene',
                     text: 'Subir',
-                    sceneId: 'entradapiso2',
-                }
+                    sceneId: 'c2piso2',
+                },
             ]
         },
 
@@ -1002,25 +1009,31 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: -6.99,
+                    yaw: 22.14,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'valerio1',
                 },
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: -1.39,
+                    yaw: -108.29,
                     type: 'scene',
                     text: 'Volver',
                     sceneId: 'hall',
                 },
                 {
-                    pitch: 30,
-                    yaw: 90,
+                    pitch: 1.76,
+                    yaw: -164.64,
                     type: 'scene',
                     text: 'subir',
                     sceneId: 'piso2',
+                },
+                {
+                    pitch: 14.66,
+                    yaw: 18.68,
+                    type: 'info',
+                    text: 'Laboratorios Valerio Wong',
                 },
             ]
         },
@@ -1028,21 +1041,21 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
         valerio1: {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/valerio1.jpg',
-            pitch: 0,
-            yaw: 0,
+            pitch: -0.33,
+            yaw: 82.56,
             hfov: 100,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: -0.33,
+                    yaw: 82.56,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'valerio2',
                 },
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: -1.25,
+                    yaw: -98.05,
                     type: 'scene',
                     text: 'Volver',
                     sceneId: 'entradavalerio',
@@ -1054,13 +1067,13 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/valerio2.jpg',
             pitch: 0,
-            yaw: 0,
+            yaw: 90,
             hfov: 100,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: 0.56,
+                    yaw: -88.82,
                     type: 'scene',
                     text: 'Volver',
                     sceneId: 'valerio1',
@@ -1071,28 +1084,28 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
         piso2: {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/piso2.jpg',
-            pitch: 0,
-            yaw: 0,
+            pitch: -0.72,
+            yaw: -100.44,
             hfov: 100,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: -3.26,
+                    yaw: -70.31,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'pasillo1piso2',
                 },
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: -10.93,
+                    yaw: 168.81,
                     type: 'scene',
                     text: 'Bajar',
                     sceneId: 'entradavalerio',
                 },
                 {
-                    pitch: 30,
-                    yaw: 90,
+                    pitch: 8.62,
+                    yaw: 133.59,
                     type: 'scene',
                     text: 'subir',
                     sceneId: 'piso3',
@@ -1103,21 +1116,21 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
         pasillo1piso2: {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/pasillo1piso2.jpg',
-            pitch: 0,
-            yaw: 0,
+            pitch: 0.53,
+            yaw: 1.96,
             hfov: 100,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: 0.53,
+                    yaw: 1.96,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'pasillo2piso2',
                 },
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: -0.81,
+                    yaw: -178.51,
                     type: 'scene',
                     text: 'Volver',
                     sceneId: 'piso2',
@@ -1129,13 +1142,13 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/pasillo2piso2.jpg',
             pitch: 0,
-            yaw: 0,
+            yaw: 90,
             hfov: 100,
 
             hotSpots: [
                 {
                     pitch: 0,
-                    yaw: 90,
+                    yaw: -90,
                     type: 'scene',
                     text: 'Volver',
                     sceneId: 'pasillo1piso2',
@@ -1146,35 +1159,35 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
         piso3: {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/piso3.jpg',
-            pitch: 0,
-            yaw: 0,
+            pitch: -4.97,
+            yaw: 140.72,
             hfov: 100,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: -1.75,
+                    yaw: -177.22,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'pasillo1piso3',
                 },
                 {
-                    pitch: 20,
-                    yaw: -90,
+                    pitch: -4.34,
+                    yaw: 91.03,
                     type: 'scene',
                     text: 'Siguiente edificio',
                     sceneId: 'c2piso3',
                 },
                 {
-                    pitch: -10,
-                    yaw: 90,
+                    pitch: -6.06,
+                    yaw: 41.12,
                     type: 'scene',
                     text: 'bajar',
                     sceneId: 'piso2',
                 },
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: 5.57,
+                    yaw: 17.09,
                     type: 'scene',
                     text: 'subir',
                     sceneId: 'piso4',
@@ -1185,21 +1198,21 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
         pasillo1piso3: {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/pasillo1piso3.jpg',
-            pitch: 0,
-            yaw: 0,
+            pitch: -1.58,
+            yaw: 94.80,
             hfov: 100,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: -0.38,
+                    yaw: 94.56,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'pasillo2piso3',
                 },
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: 0.62,
+                    yaw: -85.14,
                     type: 'scene',
                     text: 'volver',
                     sceneId: 'piso3',
@@ -1210,21 +1223,21 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
         pasillo2piso3: {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/pasillo2piso3.jpg',
-            pitch: 0,
-            yaw: 0,
+            pitch: 0.28,
+            yaw: -92.07,
             hfov: 100,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: 0.28,
+                    yaw: -92.07,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'pasillo3piso3',
                 },
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: 0.34,
+                    yaw: 87.91,
                     type: 'scene',
                     text: 'volver',
                     sceneId: 'pasillo1piso3',
@@ -1236,13 +1249,13 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-1/pasillo3piso3.jpg',
             pitch: 0,
-            yaw: 0,
+            yaw: 83,
             hfov: 100,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: 0.10,
+                    yaw: 83.88,
                     type: 'scene',
                     text: 'volver',
                     sceneId: 'pasillo2piso3',
@@ -1253,21 +1266,28 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
         c2piso3: {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-2/c2piso3.jpg',
-            pitch: 0,
-            yaw: 0,
-            hfov: 100,
+            pitch: -5.35,
+            yaw: 114.10,
+            hfov: 120,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: 8.85,
+                    yaw: -134.77,
                     type: 'scene',
-                    text: 'volver',
+                    text: 'Siguiente edificio',
                     sceneId: 'piso3',
                 },
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: -25.57,
+                    yaw: -97.44,
+                    type: 'scene',
+                    text: 'Bajar',
+                    sceneId: 'c2piso2',
+                },
+                {
+                    pitch: -1.23,
+                    yaw: 87.79,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'c2pasillo1piso3',
@@ -1284,25 +1304,32 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: -0.54,
+                    yaw: -107.21,
                     type: 'scene',
                     text: 'volver',
                     sceneId: 'c2piso3',
                 },
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: -5.14,
+                    yaw: 151.26,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'c2pasillo2piso3',
                 },
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: -0.26,
+                    yaw: -10.68,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'c2pasillo4piso3',
+                },
+                {
+                    pitch: -17.98,
+                    yaw: -71.56,
+                    type: 'scene',
+                    text: 'bajar',
+                    sceneId: 'c2pasillo1piso2',
                 },
             ]
         },
@@ -1310,21 +1337,21 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
         c2pasillo2piso3: {
             type: 'equirectangular',
             panorama: '/assets/recorridos360/C-2/c2pasillo2piso3.jpg',
-            pitch: 0,
-            yaw: 0,
+            pitch: -1.05,
+            yaw: 148.15,
             hfov: 100,
 
             hotSpots: [
                 {
-                    pitch: 0,
-                    yaw: 90,
+                    pitch: -0.71,
+                    yaw: -31.65,
                     type: 'scene',
                     text: 'volver',
                     sceneId: 'c2pasillo1piso3',
                 },
                 {
-                    pitch: 0,
-                    yaw: -90,
+                    pitch: -1.05,
+                    yaw: 148.15,
                     type: 'scene',
                     text: 'Seguir',
                     sceneId: 'c2pasillo3piso3',
@@ -1342,10 +1369,223 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             hotSpots: [
                 {
                     pitch: 0,
-                    yaw: 90,
+                    yaw: 0,
                     type: 'scene',
                     text: 'volver',
                     sceneId: 'c2pasillo2piso3',
+                },
+            ]
+        },
+
+        c2pasillo4piso3: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo4piso3.jpg',
+            pitch: -0.43,
+            yaw: 47.93,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: -2.27,
+                    yaw: 83.83,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'c2pasillo1piso3',
+                },
+            ]
+        },
+
+        c2piso2: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2piso2.jpg',
+            pitch: -2,
+            yaw: 68.70,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0.94,
+                    yaw: 86.13,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'c2pasillo1piso2',
+                },
+                {
+                    pitch: -21.64,
+                    yaw: -78.60,
+                    type: 'scene',
+                    text: 'Ir',
+                    sceneId: 'hall',
+                },
+                {
+                    pitch: 0.85,
+                    yaw: -111.54,
+                    type: 'scene',
+                    text: 'Subir',
+                    sceneId: 'c2piso3',
+                },
+            ]
+        },
+
+        c2pasillo1piso2: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo1piso2.jpg',
+            pitch: 0,
+            yaw: -90,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: -1.06,
+                    yaw: 179.38,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'c2piso2',
+                },
+                {
+                    pitch: -14.99,
+                    yaw: -143.10,
+                    type: 'scene',
+                    text: 'Bajar',
+                    sceneId: 'c2pasillo1piso1',
+                },
+                {
+                    pitch: 0,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'c2pasillo2piso2',
+                },
+                {
+                    pitch: 0,
+                    yaw: -91,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'c2pasillo4piso2',
+                },
+                {
+                    pitch: 2.08,
+                    yaw: -119.94,
+                    type: 'scene',
+                    text: 'Subir',
+                    sceneId: 'c2pasillo1piso3',
+                },
+            ]
+        },
+
+        c2pasillo2piso2: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo2piso2.jpg',
+            pitch: -0.86,
+            yaw: -9.60,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: -0.17,
+                    yaw: 170.43,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'c2pasillo1piso2',
+                },
+                {
+                    pitch: -0.86,
+                    yaw: -9.60,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'c2pasillo3piso2',
+                },
+            ]
+        },
+
+        c2pasillo3piso2: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo3piso2.jpg',
+            pitch: 0,
+            yaw: -180,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0.56,
+                    yaw: -8.93,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'c2pasillo2piso2',
+                },
+            ]
+        },
+
+        c2pasillo4piso2: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo4piso2.jpg',
+            pitch: 0.17,
+            yaw: -90.28,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: 0.17,
+                    yaw: -90.28,
+                    type: 'scene',
+                    text: 'volver',
+                    sceneId: 'c2pasillo1piso2',
+                },
+            ]
+        },
+
+        c2pasillo1piso1: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo1piso1.jpg',
+            pitch: -0.85,
+            yaw: -3.21,
+            hfov: 100,
+
+            hotSpots: [
+                {
+                    pitch: -0.85,
+                    yaw: -3.21,
+                    type: 'scene',
+                    text: 'Seguir',
+                    sceneId: 'c2pasillo2piso1',
+                },
+                {
+                    pitch: 8.33,
+                    yaw: -151.22,
+                    type: 'scene',
+                    text: 'Subir',
+                    sceneId: 'c2piso2',
+                },
+                {
+                    pitch: 1.57,
+                    yaw: -92.26,
+                    type: 'scene',
+                    text: 'Subir',
+                    sceneId: 'c2piso2',
+                },
+            ]
+        },
+
+        c2pasillo2piso1: {
+            type: 'equirectangular',
+            panorama: '/assets/recorridos360/C-2/c2pasillo2piso1.jpg',
+            pitch: -6.14,
+            yaw: -133.68,
+            hfov: 120,
+
+            hotSpots: [
+                {
+                    pitch: 0.15,
+                    yaw: -90.48,
+                    type: 'scene',
+                    text: 'Volver',
+                    sceneId: 'c2pasillo1piso1',
+                },
+                {
+                    pitch: 7.99,
+                    yaw: 168.92,
+                    type: 'info',
+                    text: 'Laboratorio',
                 },
             ]
         },
