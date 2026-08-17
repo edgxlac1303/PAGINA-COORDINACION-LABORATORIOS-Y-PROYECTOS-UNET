@@ -170,6 +170,7 @@
 
     .slide {
         height: auto;
+        min-height: auto;
     }
 
     .slide.activo {
