@@ -28,11 +28,14 @@
     font-size: 28px;
     margin-bottom: 15px;
     line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
 }
 
 .hero-texto p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
+    text-align: justify;
 }
 
 /*COLLAGE DEL HERO*/
