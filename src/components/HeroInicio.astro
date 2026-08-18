@@ -11,10 +11,108 @@
             y trabajadores.
         </p>
     </div>
+    <div id="visorHero"></div>
 
-    <div class="hero-collage">
-        <img class="foto-collage foto-principal" src="/assets/img/labsoldadura.png" alt="Laboratorio de la UNET">
-        <img class="foto-collage foto-secundaria" src="/assets/img/laboratorio2.png" alt="Proyecto académico UNET">
-        <img class="foto-collage foto-secundaria" src="/assets/img/laboratorio3.png" alt="Espacio de laboratorio UNET">
-    </div>
 </section>
+
+
+
+
+</div>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.css">
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
+
+    <script is:inline>
+
+const recorridoBloque1 = pannellum.viewer('visorHero', {
+
+    default: {
+        firstScene: 'laboratorioPlantas',
+        author: 'Coordinación de Laboratorios y Proyectos UNET',
+        autoLoad: true,
+        sceneFadeDuration: 1000,
+        hotSpotDebug: true
+    },
+
+    scenes: {
+        laboratorioPlantas: {
+            title: 'Laboratorio de Turbomáquinas y Planta de Potencia',
+            hfov: 120,
+            pitch: -10,
+            yaw: 169,
+            type: 'equirectangular',
+            panorama: '/assets/img/labplantas.jpg',
+            hotSpots: [
+                {
+                    pitch: -2,
+                    yaw: 90,
+                    type: 'scene',
+                    text: 'Laboratorio de Termofluidos y Planta de Potencia',
+                    sceneId: 'laboratorioFluidos'
+                }
+            ]
+        },
+        laboratorioFluidos: {
+            title: 'Laboratorio de Termofluidos y Planta de Potencia',
+            hfov: 120,
+            pitch: -7,
+            yaw: -114,
+            type: 'equirectangular',
+            panorama: '/assets/img/labtermo.jpg',
+            hotSpots: [
+                {
+                    pitch: -12,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Laboratorio de Bioquímica',
+                    sceneId: 'laboratorioQuimica'
+                }
+            ]
+        },
+        laboratorioQuimica: {
+            title: 'Laboratorio de Bioquímica',
+            hfov: 120,
+            pitch: -12,
+            yaw: -150,
+            type: 'equirectangular',
+            panorama: '/assets/img/labqui2.jpg',
+            hotSpots: [
+                {
+                    pitch: -12,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Laboratorio de Química General',
+                    sceneId: 'laboratorioQuimicaGeneral'
+                }
+            ]
+        },
+        laboratorioQuimicaGeneral: {
+            title: 'Laboratorio de Química General',
+            hfov: 120,
+            pitch: -12,
+            yaw: -150,
+            type: 'equirectangular',
+            panorama: '/assets/img/labquimicageneral.jpg',
+            hotSpots: [
+                {
+                    pitch: -12,
+                    yaw: -90,
+                    type: 'scene',
+                    text: 'Laboratorio de Química General',
+                    sceneId: 'laboratorioPlantas'
+                }
+            ]
+        }
+    }
+
+
+});
+    </script>
+
+
+
+
+    
+
