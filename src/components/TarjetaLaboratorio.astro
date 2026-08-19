@@ -1,5 +1,5 @@
 ---
-const { nombre, departamento, ubicacion, aula} = Astro.props;
+const { nombre, departamento, ubicacion, aula, enlaceUbicacion = "/ubicacion" } = Astro.props;
 ---
 
 <article class="tarjeta-laboratorio"> <!-- TARJETA DE LABORATORIO -->
@@ -17,7 +17,7 @@ const { nombre, departamento, ubicacion, aula} = Astro.props;
         <p><strong>Aula:</strong> {aula}</p>
 
         <div class="acciones-laboratorio"> <!-- BOTONES DE LA TARJETA -->
-            <a href="/ubicacion" class="boton-ubicacion">Ver Ubicación</a>
+            <a href={enlaceUbicacion} class="boton-ubicacion">Ver ubicación</a>
         </div>
     </div>
 

@@ -2391,3 +2391,128 @@ inputBuscarBloque2.addEventListener('keydown', (event) => {
         buscarLaboratorioBloque2();
     }
 });
+
+/* IDS INTERNOS PARA CONECTAR LAS TARJETAS CON EL RECORRIDO 360 */
+const idsLaboratoriosBloque1 = [
+    'entrada-edificio-a',
+    'quimica-071',
+    'quimica-organica-1',
+    'quimica-072',
+    'quimica-2',
+    'quimica-organica-2',
+    'fisica-ii-1',
+    'fisica-i-1',
+    'fisica-ii-2',
+    'fisica-i-2',
+    'maquinas-herramientas',
+    'conformados',
+    'turbomaquinas-planta-potencia',
+    'pavimentos',
+    'termofluidos-planta-potencia',
+    'fisiologia-sanidad-animal',
+    'anatomia',
+    'suelos',
+    'ingenieria-ambiental-1',
+    'componentes-constructivos',
+    'ingenieria-ambiental-2'
+];
+
+const idsLaboratoriosBloque2 = [
+    'valerio-wong',
+    'valerio-wong-piso-2',
+    'agroindustrial',
+    'industrias-leche',
+    'entomologia',
+    'nutricion-animal',
+    'genetica',
+    'bioquimica-083',
+    'ingenieria-metodos',
+    'biologia',
+    'botanica-agricola',
+    'forrajicultura',
+    'autoclave',
+    'fisiologia-vegetal',
+    'fitopatologia',
+    'cultivo-tejidos',
+    'microbiologia',
+    'sistemas-comunicaciones-redes',
+    'electronica-analogica',
+    'sistemas-digitales-microprocesadores',
+    'lrf-microondas',
+    'circuitos-mediciones',
+    'sistemas-digitales-ii',
+    'coordinacion-laboratorio-proyectos',
+    'electrica-electrotecnia',
+    'electronica-industrial-profei',
+    'tecnologia-electrica',
+    'proyecto-instrumentacion-electronica-control',
+    'tecnologia-electronica',
+    'sistema-control-instrumentacion-industrial',
+    'ingenieria-electrica-electrotecnia',
+    'investigacion-desarrollo-informatica',
+    'materiales',
+    'transferencia-calor',
+    'mecanica-fluidos'
+];
+
+/* UNE LOS LABORATORIOS CON SU ID Y SU RECORRIDO */
+const laboratoriosUbicacion = [
+    ...laboratoriosBloque1.map((laboratorio, index) => ({
+        ...laboratorio,
+        id: idsLaboratoriosBloque1[index],
+        recorrido: recorridoBloque1,
+        input: inputBuscarBloque1,
+        visorId: 'visorEdificio11'
+    })),
+
+    ...laboratoriosBloque2.map((laboratorio, index) => ({
+        ...laboratorio,
+        id: idsLaboratoriosBloque2[index],
+        recorrido: recorridoBloque2,
+        input: inputBuscarBloque2,
+        visorId: 'visorEdificio12'
+    }))
+];
+
+/* CARGA UN LABORATORIO EN SU RECORRIDO */
+function cargarLaboratorioEnRecorrido(laboratorio) {
+    laboratorio.input.value = laboratorio.nombre;
+
+    const visor = document.getElementById(laboratorio.visorId);
+
+    visor.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+
+    setTimeout(() => {
+        laboratorio.recorrido.loadScene(
+            laboratorio.escena,
+            laboratorio.pitch,
+            laboratorio.yaw,
+            laboratorio.hfov
+        );
+    }, 700);
+}
+
+/* ABRE AUTOMATICAMENTE UN LABORATORIO SI VIENE DESDE UNA TARJETA */
+function abrirLaboratorioDesdeUrl() {
+    const parametrosUrl = new URLSearchParams(window.location.search);
+    const idLaboratorio = parametrosUrl.get('lab');
+
+    if (!idLaboratorio) {
+        return;
+    }
+
+    const laboratorioEncontrado = laboratoriosUbicacion.find((laboratorio) => {
+        return laboratorio.id === idLaboratorio;
+    });
+
+    if (!laboratorioEncontrado) {
+        return;
+    }
+
+    cargarLaboratorioEnRecorrido(laboratorioEncontrado);
+}
+
+abrirLaboratorioDesdeUrl();

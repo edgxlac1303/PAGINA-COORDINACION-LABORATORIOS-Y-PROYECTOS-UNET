@@ -2,6 +2,93 @@
 import Layout from '../layouts/Layout.astro';
 import TarjetaLaboratorio from '../components/TarjetaLaboratorio.astro';
 import { laboratorios } from '../data/laboratorios.js';
+
+/* NORMALIZA TEXTO PARA COMPARAR NOMBRES SIN PROBLEMAS DE MAYUSCULAS O ACENTOS */
+function normalizarTextoServidor(texto: string): string {
+    return texto
+        .trim()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/\s+/g, ' ')
+        .toLowerCase();
+}
+
+/* IDS INTERNOS DE LOS LABORATORIOS QUE YA EXISTEN EN EL RECORRIDO 360 */
+const idsUbicacionPorNombre: Record<string, string> = {
+    [normalizarTextoServidor('Entrada principal del Edificio 11')]: 'entrada-edificio-a',
+    [normalizarTextoServidor('Laboratorio de Química 071')]: 'quimica-071',
+    [normalizarTextoServidor('Laboratorio de Química Orgánica')]: 'quimica-organica-1',
+    [normalizarTextoServidor('Laboratorio de Química 072')]: 'quimica-072',
+    [normalizarTextoServidor('Laboratorio de Química 2')]: 'quimica-2',
+    [normalizarTextoServidor('Laboratorio de Física II')]: 'fisica-ii-1',
+    [normalizarTextoServidor('Laboratorio de Física I')]: 'fisica-i-1',
+    [normalizarTextoServidor('Laboratorio de Máquinas y Herramientas')]: 'maquinas-herramientas',
+    [normalizarTextoServidor('Laboratorio de Conformados')]: 'conformados',
+    [normalizarTextoServidor('Laboratorio de TurboMáquinas y Planta de Potencia')]: 'turbomaquinas-planta-potencia',
+    [normalizarTextoServidor('Laboratorio de TurboMáquinas y Planta de Poténncia')]: 'turbomaquinas-planta-potencia',
+    [normalizarTextoServidor('Laboratorio de Pavimentos')]: 'pavimentos',
+    [normalizarTextoServidor('Laboratorio de TermoFluídos y Planta de Poténcia')]: 'termofluidos-planta-potencia',
+    [normalizarTextoServidor('Laboratorio de Fisiología y Sanidad Animal')]: 'fisiologia-sanidad-animal',
+    [normalizarTextoServidor('Laboratorio de Anatomía')]: 'anatomia',
+    [normalizarTextoServidor('Laboratorio de Suelos')]: 'suelos',
+    [normalizarTextoServidor('Laboratorio de Ingeniería Ambiental')]: 'ingenieria-ambiental-1',
+    [normalizarTextoServidor('Laboratorio de Componentes Constructivos')]: 'componentes-constructivos',
+
+    [normalizarTextoServidor('Laboratorios Valerio Wong')]: 'valerio-wong',
+    [normalizarTextoServidor('Laboratorios Valerio Wong Piso 2')]: 'valerio-wong-piso-2',
+    [normalizarTextoServidor('Laboratorio de Agroindustrial')]: 'agroindustrial',
+    [normalizarTextoServidor('Laboratorio de Industrias de la Leche')]: 'industrias-leche',
+    [normalizarTextoServidor('Laboratorio Entomología')]: 'entomologia',
+    [normalizarTextoServidor('Laboratorio de Nutricion Animal')]: 'nutricion-animal',
+    [normalizarTextoServidor('Laboratorio de Genética')]: 'genetica',
+    [normalizarTextoServidor('Laboratorio de Bioquímica 083')]: 'bioquimica-083',
+    [normalizarTextoServidor('Laboratorio de Ingeniería de Métodos')]: 'ingenieria-metodos',
+    [normalizarTextoServidor('Laboratorio de Biología')]: 'biologia',
+    [normalizarTextoServidor('Laboratorio de Botánica Agrícola')]: 'botanica-agricola',
+    [normalizarTextoServidor('Laboratorio de Forrajicultura')]: 'forrajicultura',
+    [normalizarTextoServidor('Laboratorio de Autoclave')]: 'autoclave',
+    [normalizarTextoServidor('Laboratorio de Fisiología Vegetal')]: 'fisiologia-vegetal',
+    [normalizarTextoServidor('Laboratorio de Fitopatología')]: 'fitopatologia',
+    [normalizarTextoServidor('Laboratorio de Cultivo de Tejidos')]: 'cultivo-tejidos',
+    [normalizarTextoServidor('Laboratorio de Microbiología')]: 'microbiologia',
+    [normalizarTextoServidor('Laboratorio de Sistemas de Comunicaciones e Ingeniería de redes')]: 'sistemas-comunicaciones-redes',
+    [normalizarTextoServidor('Laboratorio de Electrónica Analógica')]: 'electronica-analogica',
+    [normalizarTextoServidor('Laboratorio de Sistemas Digitales y Microprocesadores')]: 'sistemas-digitales-microprocesadores',
+    [normalizarTextoServidor('Laboratorio de LRF y Microondas')]: 'lrf-microondas',
+    [normalizarTextoServidor('Laboratorio de Circuítos y Mediciones')]: 'circuitos-mediciones',
+    [normalizarTextoServidor('Laboratorio de Sistemas Digitales II')]: 'sistemas-digitales-ii',
+    [normalizarTextoServidor('Coordinación de Laboratorio y Proyectos')]: 'coordinacion-laboratorio-proyectos',
+    [normalizarTextoServidor('Laboratorio de Electrica y Electrotécnia')]: 'electrica-electrotecnia',
+    [normalizarTextoServidor('Laboratorio de Electrónica Industrial (Profei)')]: 'electronica-industrial-profei',
+    [normalizarTextoServidor('Laboratorio de Tecnología Eléctrica')]: 'tecnologia-electrica',
+    [normalizarTextoServidor('Laboratorio de Proyecto de Instrumentación Electrónica y Control')]: 'proyecto-instrumentacion-electronica-control',
+    [normalizarTextoServidor('Laboratorio de Tecnología Electrónica')]: 'tecnologia-electronica',
+    [normalizarTextoServidor('Laboratorio de Sistema de Control e Instrumentación Industrial')]: 'sistema-control-instrumentacion-industrial',
+    [normalizarTextoServidor('Laboratorio de Ingeniería Eléctrica y Electrotécnia')]: 'ingenieria-electrica-electrotecnia',
+    [normalizarTextoServidor('Laboratorio de Investigación y Desarrollo en Informática')]: 'investigacion-desarrollo-informatica',
+    [normalizarTextoServidor('Laboratorio de Materiales')]: 'materiales',
+    [normalizarTextoServidor('Laboratorio de Transferencia de Calor')]: 'transferencia-calor',
+    [normalizarTextoServidor('Laboratorio de Mecánica de Fluidos')]: 'mecanica-fluidos'
+};
+
+type Laboratorio = {
+    nombre: string;
+    departamento?: string;
+    ubicacion?: string;
+    aula?: string;
+    idUbicacion?: string;
+};
+
+/* OBTIENE EL ENLACE DE UBICACION DE CADA TARJETA */
+function obtenerEnlaceUbicacion(laboratorio: Laboratorio): string {
+    const idUbicacion = laboratorio.idUbicacion || idsUbicacionPorNombre[normalizarTextoServidor(laboratorio.nombre)];
+
+    if (!idUbicacion) {
+        return '/ubicacion';
+    }
+
+    return `/ubicacion?lab=${idUbicacion}`;
+}
 ---
 
 <Layout title="Laboratorios | Coordinación de Laboratorios y Proyectos UNET">
@@ -66,6 +153,7 @@ import { laboratorios } from '../data/laboratorios.js';
                                 departamento={laboratorio.departamento}
                                 ubicacion={laboratorio.ubicacion}
                                 aula={laboratorio.aula}
+                                enlaceUbicacion={obtenerEnlaceUbicacion(laboratorio)}
                             />
                         </div>
                     ))
