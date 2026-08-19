@@ -81,7 +81,40 @@ import Layout from '../layouts/Layout.astro';
 
                 <datalist id="listaLaboratoriosBloque2">
                     <option value="Laboratorios Valerio Wong"></option>
-                    <option value="Laboratorio"></option>
+                    <option value="Laboratorios Valerio Wong Piso 2"></option>
+                    <option value="Laboratorio de Agroindustrial "></option>
+                    <option value="Laboratorio de Industrias de la Leche"></option>
+                    <option value="Laboratorio Entomología"></option>
+                    <option value="Laboratorio de Nutricion Animal"></option>
+                    <option value="Laboratorio de Genética"></option>
+                    <option value="Laboratorio de Bioquímica 083"></option>
+                    <option value="Laboratorio de Ingeniería de Métodos"></option>
+                    <option value="Laboratorio de Biología"></option>
+                    <option value="Laboratorio de Botánica Agrícola"></option>
+                    <option value="Laboratorio de Forrajicultura"></option>
+                    <option value="Laboratorio de Autoclave"></option>
+                    <option value="Laboratorio de Fisiología Vegetal"></option>
+                    <option value="Laboratorio de Fitopatología"></option>
+                    <option value="Laboratorio de Cultivo de Tejidos"></option>
+                    <option value="Laboratorio de Microbiología"></option>
+                    <option value="Laboratorio de Sistemas de Comunicaciones e Ingeniería de redes"></option>
+                    <option value="Laboratorio de Electrónica Analógica"></option>
+                    <option value="Laboratorio de Sistemas Digitales y Microprocesadores"></option>
+                    <option value="Laboratorio de LRF y Microondas"></option>
+                    <option value="Laboratorio de Circuítos y Mediciones"></option>
+                    <option value="Laboratorio de Sistemas Digitales II"></option>
+                    <option value="Coordinación de Laboratorio y Proyectos"></option>
+                    <option value="Laboratorio de Electrica y Electrotécnia"></option>
+                    <option value="Laboratorio de Electrónica Industrial (Profei)"></option>
+                    <option value="Laboratorio de Tecnología Eléctrica"></option>
+                    <option value="Laboratorio de Proyecto de Instrumentación Electrónica y Control"></option>
+                    <option value="Laboratorio de Tecnología Electrónica"></option>
+                    <option value="Laboratorio de Sistema de Control e Instrumentación Industrial"></option>
+                    <option value="Laboratorio de Ingeniería Eléctrica y Electrotécnia"></option>
+                    <option value="Laboratorio de Investigación y Desarrollo en Informática"></option>
+                    <option value="Laboratorio de Materiales"></option>
+                    <option value="Laboratorio de Transferencia de Calor"></option>
+                    <option value="Laboratorio de Mecánica de Fluidos"></option>
                 </datalist>
 
                 <button id="botonBuscarLaboratorioBloque2">
@@ -102,6 +135,15 @@ import Layout from '../layouts/Layout.astro';
     <script is:inline src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
 
     <script is:inline>
+        /*NORMALIZA EL TEXTO PARA HACER BUSQUEDAS MAS FLEXIBLES*/
+    function normalizarTexto(texto) {
+        return texto
+            .trim()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/\s+/g, ' ')
+            .toLowerCase();
+    }
         // RECORRIDO EDIFICIO 11
         // RECORRIDO EDIFICIO 11
 const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
@@ -121,7 +163,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/inicio.jpg',
             pitch: -3.9,
             yaw: -91.3,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -146,7 +188,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/pasillo2A.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -171,7 +213,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/pasillocafetin.jpg',
             pitch: 1,
             yaw: 85,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -196,7 +238,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/pasillomuroA.jpg',
             pitch: -2,
             yaw: 90,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -221,7 +263,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/entradaceti.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -253,7 +295,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/pasilloceti1.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -285,7 +327,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/labs1pasillo1ceti.jpg',
             pitch: 0,
             yaw: -88,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -316,7 +358,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/labs2pasillo1ceti.jpg',
             pitch: -2,
             yaw: -88,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -353,7 +395,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/labs3pasillo1ceti.jpg',
             pitch: -1,
             yaw: -75,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -383,7 +425,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/pasilloceti2.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -408,7 +450,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/labs1pasillo2ceti.jpg',
             pitch: -5,
             yaw: -92,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -445,7 +487,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/labs2pasillo2ceti.jpg',
             pitch: -1,
             yaw: -59,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -475,7 +517,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/A-CETI/pasilloceti3.jpg',
             pitch: -6,
             yaw: 92,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -500,7 +542,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/calle1.jpg',
             pitch: -1,
             yaw: 91,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -532,7 +574,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/calle2.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -557,7 +599,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/labs1calle2.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -594,7 +636,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/labs2calle2.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -631,7 +673,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/calle3.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -663,7 +705,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/labs1calle3.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -694,7 +736,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/labs2calle3.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -725,7 +767,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/labs3calle3.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -750,7 +792,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/labs3calle4.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -781,7 +823,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/labs2calle4.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -812,7 +854,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/labs1calle4.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -849,7 +891,7 @@ const recorridoBloque1 = pannellum.viewer('visorEdificio11', {
             panorama: '/assets/recorridos360/CALLE-A/calle4.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -880,147 +922,147 @@ const laboratoriosBloque1 = [
         escena: 'entradaEdificio11',
         pitch: -3.6,
         yaw: -77.4,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Química 071',
         escena: 'labs1pasillo1ceti',
         pitch: 26.17,
         yaw: 29.14,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Química Orgánica',
         escena: 'labs2pasillo1ceti',
         pitch: 12.36,
         yaw: -42.24,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Química 072',
         escena: 'labs2pasillo1ceti',
         pitch: 4.79,
         yaw: 165.79,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Química 2',
         escena: 'labs3pasillo1ceti',
         pitch: 8,
         yaw: 132.88,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Química Orgánica',
         escena: 'labs3pasillo1ceti',
         pitch: 2.10,
         yaw: -7.44,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Física II',
         escena: 'labs1pasillo2ceti',
         pitch: 7.58,
         yaw: -25.02,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Física I',
         escena: 'labs1pasillo2ceti',
         pitch: 2.46,
         yaw: 156.51,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Física II',
         escena: 'labs2pasillo2ceti',
         pitch: 5.28,
         yaw: 12.34,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Física I',
         escena: 'labs2pasillo2ceti',
         pitch: 6.92,
         yaw: 127.70,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Máquinas y Herramientas',
         escena: 'labs1calle2',
         pitch: 8.51,
         yaw: -86.47,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Conformados',
         escena: 'labs1calle2',
         pitch: 6.57,
         yaw: 85.16,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de TurboMáquinas y Planta de Poténncia',
         escena: 'labs2calle2',
         pitch: 11,
         yaw: 61,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Pavimentos',
         escena: 'labs2calle2',
         pitch: 6.3,
         yaw: 140,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de TermoFluídos y Planta de Poténcia',
         escena: 'labs2calle2',
         pitch: 9.47,
         yaw: -103.19,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Fisiología y Sanidad Animal',
         escena: 'labs1calle3',
         pitch: 6.10,
         yaw: 24.46,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Anatomía',
         escena: 'labs2calle3',
         pitch: 7.33,
         yaw: 110.44,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Suelos',
         escena: 'labs3calle4',
         pitch: 3.53,
         yaw: -147.42,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Ingeniería Ambiental',
         escena: 'labs2calle4',
         pitch: 7.07,
         yaw: 12.93,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Componentes Constructivos ',
         escena: 'labs1calle4',
         pitch: 6.06,
         yaw: 64.81,
-        hfov: 80
+        hfov: 120
     },
     {
         nombre: 'Laboratorio de Ingeniería Ambiental',
         escena: 'labs1calle4',
         pitch: 3.64,
         yaw: -127.21,
-        hfov: 80
+        hfov: 120
     }
 ];
 
@@ -1029,15 +1071,16 @@ const inputBuscarBloque1 = document.getElementById('buscarLaboratorioBloque1');
 const botonBuscarBloque1 = document.getElementById('botonBuscarLaboratorioBloque1');
 
 /*FUNCION PARA BUSCAR UN LABORATORIO EN EL RECORRIDO*/
+/*FUNCION PARA BUSCAR UN LABORATORIO EN EL RECORRIDO DEL BLOQUE 1*/
 function buscarLaboratorioBloque1() {
-    const textoBuscado = inputBuscarBloque1.value.trim().toLowerCase();
+    const textoBuscado = normalizarTexto(inputBuscarBloque1.value);
 
     const laboratorioEncontrado = laboratoriosBloque1.find((laboratorio) => {
-        return laboratorio.nombre.toLowerCase() === textoBuscado;
+        return normalizarTexto(laboratorio.nombre) === textoBuscado;
     });
 
     if (!laboratorioEncontrado) {
-        alert('Laboratorio no encontrado en el recorrido.');
+        alert('Laboratorio no encontrado en el recorrido del Edificio 11.');
         return;
     }
 
@@ -1135,7 +1178,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/entradavalerio.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1173,7 +1216,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/valerio1.jpg',
             pitch: -0.33,
             yaw: 82.56,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1198,7 +1241,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/valerio2.jpg',
             pitch: 0,
             yaw: 90,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1216,7 +1259,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/piso2.jpg',
             pitch: -0.72,
             yaw: -100.44,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1254,7 +1297,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo1piso2.jpg',
             pitch: 0.53,
             yaw: 1.96,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1279,7 +1322,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo2piso2.jpg',
             pitch: 0,
             yaw: 90,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1297,7 +1340,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/piso3.jpg',
             pitch: -4.97,
             yaw: 140.72,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1349,7 +1392,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo1piso3.jpg',
             pitch: -1.58,
             yaw: 94.80,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1380,7 +1423,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo2piso3.jpg',
             pitch: 0.28,
             yaw: -92.07,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1417,7 +1460,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo3piso3.jpg',
             pitch: 0,
             yaw: 83,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1441,7 +1484,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo4piso3.jpg',
             pitch: -3.55,
             yaw: -1.91,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1471,7 +1514,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/piso4.jpg',
             pitch: 0,
             yaw: 83,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1503,7 +1546,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo1piso4.jpg',
             pitch: -10,
             yaw: 140,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1539,7 +1582,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo2piso4.jpg',
             pitch: -0.31,
             yaw: 91.32,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1576,7 +1619,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo3piso4.jpg',
             pitch: -0.80,
             yaw: 17.60,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1613,7 +1656,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-1/pasillo4piso4.jpg',
             pitch: -1.35,
             yaw: 12.86,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1669,7 +1712,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2pasillo1piso3.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1714,7 +1757,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2pasillo2piso3.jpg',
             pitch: -1.05,
             yaw: 148.15,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1758,7 +1801,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2pasillo3piso3.jpg',
             pitch: 0,
             yaw: 0,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1788,7 +1831,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2pasillo4piso3.jpg',
             pitch: -0.43,
             yaw: 47.93,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1812,7 +1855,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2piso2.jpg',
             pitch: -2,
             yaw: 68.70,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1844,7 +1887,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2pasillo1piso2.jpg',
             pitch: 0,
             yaw: -90,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1908,7 +1951,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2pasillo2piso2.jpg',
             pitch: -0.86,
             yaw: -9.60,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1939,7 +1982,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2pasillo3piso2.jpg',
             pitch: 0,
             yaw: -180,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1969,7 +2012,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2pasillo4piso2.jpg',
             pitch: -0.53,
             yaw: -90.28,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -1999,7 +2042,7 @@ const recorridoBloque2 = pannellum.viewer('visorEdificio12', {
             panorama: '/assets/recorridos360/C-2/c2pasillo1piso1.jpg',
             pitch: -0.85,
             yaw: -3.21,
-            hfov: 100,
+            hfov: 120,
 
             hotSpots: [
                 {
@@ -2072,14 +2115,245 @@ const laboratoriosBloque2 = [
         escena: 'entradavalerio',
         pitch: 14.66,
         yaw: 18.68,
-        hfov: 100
+        hfov: 120
     },
     {
-        nombre: 'Laboratorio',
+        nombre: 'Laboratorios Valerio Wong Piso 2',
+        escena: 'piso2',
+        pitch: 10.40,
+        yaw: -75.01,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Agroindustrial ',
+        escena: 'piso3',
+        pitch: 7.7,
+        yaw: -166,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Industrias de la Leche',
+        escena: 'pasillo1piso3',
+        pitch: 8.86,
+        yaw: -40.40,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio Entomología',
+        escena: 'pasillo2piso3',
+        pitch: 6,
+        yaw: 156,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Nutricion Animal',
+        escena: 'pasillo2piso3',
+        pitch: 6,
+        yaw: 64,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Genética',
+        escena: 'pasillo3piso3',
+        pitch: 3,
+        yaw: -84,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Bioquímica 083',
+        escena: 'pasillo4piso3',
+        pitch: 19,
+        yaw: 78,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Ingeniería de Métodos',
+        escena: 'pasillo4piso3',
+        pitch: 2,
+        yaw: -170.46,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Biología',
+        escena: 'pasillo1piso4',
+        pitch: 3,
+        yaw: -165,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Botánica Agrícola',
+        escena: 'pasillo1piso4',
+        pitch: 11,
+        yaw: 84,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Forrajicultura',
+        escena: 'pasillo1piso4',
+        pitch: 7,
+        yaw: 13,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Autoclave',
+        escena: 'pasillo2piso4',
+        pitch: 9,
+        yaw: -142,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Fisiología Vegetal',
+        escena: 'pasillo2piso4',
+        pitch: 4.5,
+        yaw: -58,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Fitopatología',
+        escena: 'pasillo3piso4',
+        pitch: 3,
+        yaw: 133,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Cultivo de Tejidos',
+        escena: 'pasillo3piso4',
+        pitch: 8.5,
+        yaw: -34,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Microbiología',
+        escena: 'pasillo4piso4',
+        pitch: 4.8,
+        yaw: 20.3,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Sistemas de Comunicaciones e Ingeniería de redes',
+        escena: 'c2pasillo1piso3',
+        pitch: 5.08,
+        yaw: 85.8,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Electrónica Analógica',
+        escena: 'c2pasillo2piso3',
+        pitch: 4,
+        yaw: 74.4,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Sistemas Digitales y Microprocesadores',
+        escena: 'c2pasillo2piso3',
+        pitch: 4,
+        yaw: -143,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de LRF y Microondas',
+        escena: 'c2pasillo2piso3',
+        pitch: 16,
+        yaw: -63,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Circuítos y Mediciones',
+        escena: 'c2pasillo3piso3',
+        pitch: 7,
+        yaw: 71.5,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Sistemas Digitales II',
+        escena: 'c2pasillo3piso3',
+        pitch: 7,
+        yaw: -98.3,
+        hfov: 120
+    },
+    {
+        nombre: 'Coordinación de Laboratorio y Proyectos',
+        escena: 'c2pasillo4piso3',
+        pitch: 3,
+        yaw: -96,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Electrica y Electrotécnia',
+        escena: 'c2pasillo1piso2',
+        pitch: 9,
+        yaw: -10,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Electrónica Industrial (Profei)',
+        escena: 'c2pasillo1piso2',
+        pitch: 8,
+        yaw: 115,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Tecnología Eléctrica',
+        escena: 'c2pasillo1piso2',
+        pitch: 6,
+        yaw: -81,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Proyecto de Instrumentación Electrónica y Control',
+        escena: 'c2pasillo2piso2',
+        pitch: 8.4,
+        yaw: -115.7,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Tecnología Electrónica',
+        escena: 'c2pasillo3piso2',
+        pitch: 14.6,
+        yaw: -92.9,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Sistema de Control e Instrumentación Industrial',
+        escena: 'c2pasillo3piso2',
+        pitch: 3.2,
+        yaw: 164.30,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Ingeniería Eléctrica y Electrotécnia',
+        escena: 'c2pasillo4piso2',
+        pitch: 5.4,
+        yaw: 123,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Investigación y Desarrollo en Informática',
+        escena: 'c2pasillo4piso2',
+        pitch: 8.7,
+        yaw: -71.5,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Materiales',
+        escena: 'c2pasillo1piso1',
+        pitch: 5,
+        yaw: 51.6,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Transferencia de Calor',
+        escena: 'c2pasillo1piso1',
+        pitch: 3,
+        yaw: 179,
+        hfov: 120
+    },
+    {
+        nombre: 'Laboratorio de Mecánica de Fluidos',
         escena: 'c2pasillo2piso1',
         pitch: 7.99,
         yaw: 168.92,
-        hfov: 100
+        hfov: 120
     }
 ];
 
@@ -2089,10 +2363,10 @@ const botonBuscarBloque2 = document.getElementById('botonBuscarLaboratorioBloque
 
 /*FUNCION PARA BUSCAR UN LABORATORIO EN EL RECORRIDO DEL BLOQUE 2*/
 function buscarLaboratorioBloque2() {
-    const textoBuscado = inputBuscarBloque2.value.trim().toLowerCase();
+    const textoBuscado = normalizarTexto(inputBuscarBloque2.value);
 
     const laboratorioEncontrado = laboratoriosBloque2.find((laboratorio) => {
-        return laboratorio.nombre.toLowerCase() === textoBuscado;
+        return normalizarTexto(laboratorio.nombre) === textoBuscado;
     });
 
     if (!laboratorioEncontrado) {
